@@ -1,0 +1,104 @@
+{
+  "name": "pomme-page",
+  "version": "0.0.1",
+  "description": "une homepage pour mon navigateur",
+  "main": "src/html/index.html",
+  "author": "vinz",
+  "license": "MIT",
+  "scripts": {
+    "dev": "npm run clean && npx parcel src/html/index.pug --out-dir development -p 3000",
+    "build": "npm run clean && npx parcel build src/html/index.pug --out-dir dist --public-url ./ --no-cache",
+    "serve": "npx serve dist",
+    "clean": "rimraf ./development && rimraf -rf ./.cache && rimraf -rf ./dist",
+    "lint": "eslint  --fix './**/*.js' --format table && stylelint '**/*.css'",
+    "test": "jest",
+    "format": "rimraf ./development && rimraf -rf ./.cache && rimraf -rf ./dist && stylelint --fix './**/*.css' && prettier --write 'src/**/*.+(js|html|pug|css|json|md|yml|yaml)'"
+  },
+  "dependencies": {
+    "apexcharts": "^3.24.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
+    "@prettier/plugin-pug": "^1.10.1",
+    "autoprefixer": "^9.8.6",
+    "eslint": "^7.12.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.14.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^2.1.2",
+    "pug": "^3.0.0",
+    "rimraf": "^3.0.2",
+    "stylelint": "^13.7.2",
+    "stylelint-config-rational-order": "^0.0.4",
+    "stylelint-config-standard": "^20.0.0"
+  },
+  "browserslist": [
+    "since 2017-06"
+  ],
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "extends": [
+      "airbnb-base",
+      "plugin:prettier/recommended"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 12,
+      "sourceType": "module"
+    },
+    "rules": {
+      "prettier/prettier": "error",
+      "no-param-reassign": 0
+    }
+  },
+  "prettier": {
+    "printWidth": 130,
+    "singleQuote": true
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {
+        "grid": true
+      }
+    }
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-rational-order"
+    ],
+    "rules": {
+      "selector-type-no-unknown": null
+    }
+  },
+  "eslintIgnore": [
+    "dist/*",
+    "development/*",
+    "tests/*"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run clean && npm run lint && npm run format",
+      "pre-push": "npm run test"
+    }
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
+  }
+}

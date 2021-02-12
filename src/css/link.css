@@ -1,0 +1,19 @@
+/************** LINK **************/
+
+a {
+  display: flex;
+  grid-row: span 2;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--blue);
+  border-radius: 10px;
+  transition: 200ms ease-in-out;
+}
+
+a:hover {
+  border: 2px solid var(--green);
+}
+
+.icon {
+  width: var(--spacing-6);
+}
