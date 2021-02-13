@@ -109,6 +109,7 @@
     * Widths
     * Applied as max-width
     */
+  --width-00: 120px;
   --width-0: 180px;
   --width-1: 320px;
   --width-2: 396px;
@@ -161,9 +162,9 @@ body {
 grid {
   display: grid;
   grid-auto-flow: dense;
-  grid-auto-rows: var(--spacing-4);
-  grid-gap: var(--gap-2);
-  grid-template-columns: repeat(auto-fit, minmax(var(--width-0), 1fr));
+  grid-auto-rows: var(--spacing-2);
+  grid-gap: var(--gap-1);
+  grid-template-columns: repeat(auto-fit, minmax(var(--width-00), 1fr));
 }
 
 pomme {

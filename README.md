@@ -43,8 +43,6 @@ I found a pretty cool [r/startpages](https://www.reddit.com/r/startpages/) that 
 
 The crypto chart is cool. the line of the graph represents the evolution of the value of the selected currency for the last 7 days (if I read correctly the binance API documentation).
 
-If you clone this project and run it locally, you'll probably find that the elements displayed on the screen are totally disproportionate. That's because I use a small 4k screen at home. But we'll see how to change the CSS values to get a more suitable rendering on a 1080 screen. 
-
 ### Built With
 
 * [Parcel](https://parceljs.org/) Blazing fast, zero configuration web application bundler
@@ -79,6 +77,10 @@ To get a local copy up and running follow these steps.
    ```JS
    const city = 'xxxxxxxxxxxxxx';
    const apikey = 'PASTE YOUR API KEY';
+   ```
+5. Now change city name in the template "src/html/weather.pug"
+   ```html
+    city-name your place
    ```
 
 
@@ -118,9 +120,6 @@ To lint and prettify your code
 
 ### Crypto chart
 If you want to change currencies choice, head to "src/html/chart.pug" and simply change currencies symbols to desired ones. But always keep the first one with the type attribute to 'active'. I'm not sure how much you can fit in there until it overlap or break.
-
-### Elements size
-I have used a collection of CSS variables (src/css/global.css) designed for rapid prototyping, consistent styling. I used some of these variables to size everything. So if you want to reduce the size of elements displayed to adapt them to your screen, You can either change values of these variables in this file after you found which one is used. Or you can find css properties in the multiples css files and change them to your preferences.
 
 ### Pomme
 check "/src/html/index.pug" . simply type "pomme"  anywhere to add a decorative green square. :)

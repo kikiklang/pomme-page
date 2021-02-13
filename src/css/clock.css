@@ -13,5 +13,5 @@ clock {
 .time {
   color: var(--main);
   font-weight: var(--font-weight-bold);
-  font-size: var(--scale-5);
+  font-size: var(--scale-3);
 }

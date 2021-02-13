@@ -47,7 +47,7 @@ async function generateChart() {
       type: 'line',
       toolbar: { show: false },
       width: '89%',
-      height: '60%',
+      height: '59%',
       animations: {
         enabled: true,
         easing: 'easeinout',

@@ -4,7 +4,7 @@ crypto {
   display: flex;
   flex-direction: column;
   grid-column: span 2;
-  grid-row: span 4;
+  grid-row: span 6;
   background-color: var(--orange);
   border-radius: 10px;
 }
@@ -22,7 +22,7 @@ selector button[type='inactive'] {
   color: inherit;
   color: var(--main);
   font-weight: var(--font-weight-bold);
-  font-size: var(--scale-3);
+  font-size: var(--scale-2);
   background: none;
   border: none;
   outline: inherit;
@@ -35,7 +35,7 @@ selector button[type='active'] {
   color: inherit;
   color: var(--main);
   font-weight: var(--font-weight-bold);
-  font-size: var(--scale-3);
+  font-size: var(--scale-2);
   background: none;
   border: none;
   outline: inherit;
@@ -51,7 +51,7 @@ chart {
 numbers {
   display: flex;
   justify-content: space-between;
-  height: 80px;
+  height: 64px;
 }
 
 difference {
@@ -70,7 +70,7 @@ current {
 label {
   color: var(--main);
   font-weight: var(--font-weight-bold);
-  font-size: var(--scale-2);
+  font-size: var(--scale-0);
   opacity: 0.5;
 }
 
@@ -78,5 +78,5 @@ difference-amount,
 current-price {
   color: var(--main);
   font-weight: var(--font-weight-bold);
-  font-size: var(--scale-4);
+  font-size: var(--scale-3);
 }

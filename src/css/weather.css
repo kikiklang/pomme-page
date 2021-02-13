@@ -4,7 +4,7 @@ weather {
   display: flex;
   flex-direction: column;
   grid-column: span 1;
-  grid-row: span 2;
+  grid-row: span 4;
   align-items: center;
   background-color: var(--orange);
   border-radius: 10px;
@@ -27,7 +27,7 @@ weather-info {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  height: var(--spacing-4);
+  height: var(--spacing-3);
 }
 
 weather-info city {
@@ -45,7 +45,7 @@ city-label,
 temp-label {
   color: var(--main);
   font-weight: var(--font-weight-bold);
-  font-size: var(--scale-1);
+  font-size: var(--scale-0);
   opacity: 0.5;
 }
 
@@ -53,5 +53,5 @@ city-name,
 temp-value {
   color: var(--main);
   font-weight: var(--font-weight-bold);
-  font-size: var(--scale-3);
+  font-size: var(--scale-1);
 }
