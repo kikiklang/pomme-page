@@ -122,6 +122,9 @@ If you want to change currencies choice, head to "src/html/chart.pug" and simply
 ### Elements size
 I have used a collection of CSS variables (src/css/global.css) designed for rapid prototyping, consistent styling. I used some of these variables to size everything. So if you want to reduce the size of elements displayed to adapt them to your screen, You can either change values of these variables in this file after you found which one is used. Or you can find css properties in the multiples css files and change them to your preferences.
 
+### Pomme
+check "/src/html/index.pug" . simply type "pomme"  anywhere to add a decorative green square. :)
+
 <!-- LICENSE -->
 ## License
 
