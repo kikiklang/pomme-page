@@ -28,6 +28,9 @@
     "stylelint-config-standard": "^20.0.0",
     "xo": "^0.37.1"
   },
+  "browserslist": [
+    "since 2017-06"
+  ],  
   "prettier": {
     "printWidth": 130,
     "singleQuote": true
