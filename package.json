@@ -2,20 +2,16 @@
   "name": "pomme-page",
   "version": "0.0.1",
   "description": "une homepage pour mon navigateur",
-  "main": "src/html/index.html",
+  "main": "src/index.pug",
   "author": "vinz",
   "license": "MIT",
   "scripts": {
-    "dev": "npm run clean && npx parcel src/html/index.pug --out-dir development -p 3000",
-    "build": "npm run clean && npx parcel build src/html/index.pug --out-dir dist --public-url ./ --no-cache",
+    "dev": "npm run clean && npx parcel src/index.pug --out-dir development -p 3000",
+    "build": "npm run clean && npx parcel build src/index.pug --out-dir dist --public-url ./ --no-cache",
     "serve": "npx serve dist",
     "clean": "rimraf ./development && rimraf -rf ./.cache && rimraf -rf ./dist",
     "lint": "eslint  --fix './**/*.js' --format table && stylelint '**/*.css'",
-    "test": "jest",
     "format": "rimraf ./development && rimraf -rf ./.cache && rimraf -rf ./dist && stylelint --fix './**/*.css' && prettier --write 'src/**/*.+(js|html|pug|css|json|md|yml|yaml)'"
-  },
-  "dependencies": {
-    "apexcharts": "^3.24.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -82,23 +78,11 @@
   },
   "eslintIgnore": [
     "dist/*",
-    "development/*",
-    "tests/*"
+    "development/*"
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "npm run clean && npm run lint && npm run format",
-      "pre-push": "npm run test"
-    }
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.js$": "babel-jest"
+      "pre-commit": "npm run clean && npm run lint && npm run format"
     }
   }
 }

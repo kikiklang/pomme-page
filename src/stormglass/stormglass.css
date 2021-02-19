@@ -1,0 +1,96 @@
+/************** STORMGLASS **************/
+
+pp-stormglass {
+  display: none;
+  flex-direction: column;
+  grid-column: span 2;
+  grid-row: span 4;
+  padding: 0 var(--spacing-2);
+  background-color: var(--module-background);
+  border-radius: 10px;
+  animation: module-display 500ms ease-in-out;
+}
+
+pp-stormglass > * {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--spacing-4);
+}
+
+pp-header > p {
+  color: var(--main);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--scale-2);
+}
+
+pp-firstrow > *,
+pp-secondrow > * {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.watertemp-label,
+.winddir-label,
+.windspeed-label,
+.waveheight-label,
+.waveperiod-label,
+.wavedir-label {
+  color: var(--main-light);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--scale-00);
+}
+
+.watertemp-value,
+.winddir-value,
+.windspeed-value,
+.waveheight-value,
+.waveperiod-value,
+.wavedir-value {
+  color: var(--main);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--scale-2);
+}
+
+.pp-stormglass-unit {
+  color: var(--main-light);
+  font-size: var(--scale-0);
+}
+
+pp-linebreak {
+  width: 100%;
+  height: 1px;
+  background: var(--main-light);
+}
+
+pp-stormglass-loader-container {
+  display: flex;
+  grid-column: span 2;
+  grid-row: span 4;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main);
+  border: 2px solid var(--pomme-background);
+  border-radius: 10px;
+}
+
+pp-stormglass-error-container {
+  display: none;
+  flex-direction: column;
+  grid-column: span 2;
+  grid-row: span 4;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main);
+  border: 2px solid var(--search-background);
+  border-radius: 10px;
+  animation: module-display 500ms ease-in-out;
+}
+
+p.stormglass-error-code {
+  margin-top: var(--spacing-0);
+  color: var(--search-background);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--scale-2);
+}

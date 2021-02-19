@@ -39,7 +39,7 @@
 
 [![Pomme page Screen Shot]](./src/assets/images/screenshot.png)
 
-I found a pretty cool [r/startpages](https://www.reddit.com/r/startpages/) that motivated me to make my own browser homepage. This project was also a good opportunity to test new stuff so it's probably over complicated for a simple homepage :).
+I found a pretty cool [r/startpages](https://www.reddit.com/r/startpages/) that motivated me to make my own browser homepage. This project was also a good opportunity to test new things so it's probably over complicated for a simple homepage :).
 
 The crypto chart is cool. the line of the graph represents the evolution of the value of the selected currency for the last 7 days (if I read correctly the binance API documentation).
 

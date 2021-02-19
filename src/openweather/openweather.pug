@@ -1,0 +1,31 @@
+// //////// openwEATHER //////// //
+
+pp-openweather
+  pp-openweather-icon
+    img.icon(src='./assets/icons/openweather/clear.svg', state='hide')
+    img.icon(src='./assets/icons/openweather/clouds.svg', state='hide')
+    img.icon(src='./assets/icons/openweather/drizzle.svg', state='hide')
+    img.icon(src='./assets/icons/openweather/rain.svg', state='hide')
+    img.icon(src='./assets/icons/openweather/snow.svg', state='hide')
+    img.icon(src='./assets/icons/openweather/thunderstorm.svg', state='hide')
+    img.icon(src='./assets/icons/openweather/fog.svg', state='hide')
+  pp-openweather-city
+    p.city-label city
+    p.city-value LRSY
+  pp-openweather-temp 
+    p.temp-label temp.
+    p.temp-value 
+  pp-openweather-humid 
+    p.humid-label humid.
+    p.humid-value
+
+pp-openweather-loader-container
+  pp-loader
+    pp-loader-dot
+    pp-loader-dot
+    pp-loader-dot
+    pp-loader-dot
+
+pp-openweather-error-container
+  p.error-notification API error
+  p.openweather-error-code

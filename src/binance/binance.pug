@@ -1,0 +1,30 @@
+// //////// CRYPTO //////// //
+
+pp-binance
+  pp-binance-selector
+    button.binance-selector-button(type='active') btc
+    button.binance-selector-button(type='inactive') eth
+    button.binance-selector-button(type='inactive') bch
+    button.binance-selector-button(type='inactive') ltc
+    button.binance-selector-button(type='inactive') sxp
+  pp-binance-chart
+    svg.binance-chart-svg(version='1.1', xmlns='http://www.w3.org/2000/svg')
+  pp-binance-chart-label last week
+  pp-binance-footer
+    pp-binance-difference
+      p.binance-difference-label last 24h
+      p.binance-difference-value
+    pp-binance-current
+      p.binance-current-label curr. value
+      p.binance-current-value
+
+pp-binance-loader-container
+  pp-loader
+    pp-loader-dot
+    pp-loader-dot
+    pp-loader-dot
+    pp-loader-dot
+
+pp-binance-error-container
+  p.error-notification API error
+  p.binance-error-code
