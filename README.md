@@ -25,7 +25,7 @@
   - [Licence](#Licence)
 
 ## Features:
-- **theming** Custom colors and fonts with css variables.
+- **theming** Custom colors with css variables.
 - **Responsive** Unpredictive layout thanks to CSS grid :)
 - **Modules** for informations other than links.
 
@@ -92,29 +92,35 @@ Pomme Page use modules to display informations other than links. Currently, ther
 - **unsplash** random image display (needs API key: [unsplash](https://unsplash.com/developers))
 - **stormglass** sea condition (needs API key: [stormglass](https://stormglass.io/))
 
-Find the module in the src folder and his javascript file. You can add your api key here.
+Find the module in the `src` folder and his javascript file. You can add your api key here.
 
 ## Customization
 
 ### Layout
-Layout is made with CSS grid, you can simply move things around in index.pug file
+Layout is made with CSS grid, you can simply move things around in `src/index.pug` file
 
 ### Links
-To add a link, go to index.pug and make a myrtille. It's a pug function that take 3 parameters:
+Links image with work with svg format. To add a link, go to `src/index.pug` and make a myrtille. It's a pug function that takes 3 parameters:
 - domain
 - svg viewbox
 - svg path
 
 ### Modules
-To remove a module, you have to delete the corresponding folder in src and then and remove all imports found in the 3 index files (pug, css, js).
+**binance**:  To get the crypto-currencies you want. Head to `src/binance/binance.pug` and change binance-selector-button value to desired currency symbols. Javascript will do the work behind.
+**openweather**:  you will need to provide the city name in `src/openweather/openweather.js` + units of measurement. standard, metric and imperial units are available.
+**unsplash**: you can provide another collection ID ([unsplash collections](https://unsplash.com/collections)) in `src/unsplash/unsplash.js` file
+**stormglass**: you will need latitude and longitude of your surf spot. Set the variables in `src/stormglass/stormglass.js`
+
+To remove a module, you have to delete the corresponding folder in src and then remove all imports found in the 3 index files (pug, css, js).
 
 ### Colors
-Colors theming is not perfect yet. but can your make your theme with the css variables found in index.css
+Colors theming is not perfect yet, but you make your theme with the css variables found in index.css
 
 ## Contribution
 Please free to give what you have in this project if you like it. It would nice to make:
 - new modules
 - new color themes
+- fonts integration
 - new icons
 - refactor
 - anything
