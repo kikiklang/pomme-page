@@ -114,10 +114,10 @@ Links images work in svg format. To add a link, go to `src/index.pug` and make a
 To remove a module, you have to delete the corresponding folder in src and then remove all imports found in the 3 index files (pug, css, js).
 
 ### Colors
-Colors theming is not perfect yet, but you make your theme with the css variables found in index.css
+Colors theming is not perfect yet, but you cqn make your theme with the css variables found in `index.css`
 
 ## Contribution
-Please free to give what you have in this project if you like it. It would nice to make:
+Please feel free to give what you have in this project if you like it. It would nice to make:
 - new modules
 - new color themes
 - fonts integration
@@ -126,7 +126,7 @@ Please free to give what you have in this project if you like it. It would nice 
 - anything
 
 ## Deploying
-After the build process, you'll find a dist folder that parcel just created. We still have API Keys in the code. In my case, i deploy this behind a caddy reverse proxy and limit/filter access to this static files only from my personal computer IP.
+After the build process, you'll find a `dist` folder that parcel just created. We still have API Keys in the code. In my case, i deploy this behind a caddy reverse proxy and limit/filter access to this static files only from my personal computer IP.
 
 ## License
 
