@@ -100,16 +100,16 @@ Find the module in the `src` folder and his javascript file. You can add your ap
 Layout is made with CSS grid, you can simply move things around in `src/index.pug` file
 
 ### Links
-Links image with work with svg format. To add a link, go to `src/index.pug` and make a myrtille. It's a pug function that takes 3 parameters:
+Links images work in svg format. To add a link, go to `src/index.pug` and make a myrtille. It's a pug function that takes 3 parameters:
 - domain
 - svg viewbox
 - svg path
 
 ### Modules
-**binance**:  To get the crypto-currencies you want. Head to `src/binance/binance.pug` and change binance-selector-button value to desired currency symbols. Javascript will do the work behind.
-**openweather**:  you will need to provide the city name in `src/openweather/openweather.js` + units of measurement. standard, metric and imperial units are available.
-**unsplash**: you can provide another collection ID ([unsplash collections](https://unsplash.com/collections)) in `src/unsplash/unsplash.js` file
-**stormglass**: you will need latitude and longitude of your surf spot. Set the variables in `src/stormglass/stormglass.js`
+- **binance**:  To get the crypto-currencies you want. Head to `src/binance/binance.pug` and change binance-selector-button value to desired currency symbols. Javascript will do the work behind.
+- **openweather**:  you will need to provide the city name in `src/openweather/openweather.js` + units of measurement. standard, metric and imperial units are available.
+- **unsplash**: you can provide another collection ID ([unsplash collections](https://unsplash.com/collections)) in `src/unsplash/unsplash.js` file
+- **stormglass**: you will need latitude and longitude of your surf spot. Set the variables in `src/stormglass/stormglass.js`
 
 To remove a module, you have to delete the corresponding folder in src and then remove all imports found in the 3 index files (pug, css, js).
 
