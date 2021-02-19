@@ -1,28 +1,28 @@
 // //////// INDEX //////// //
 
-import displayClock from './clock/clock';
-import { buttonsContainer, searchContainer, toggleEngineButtons, sendSearch } from './search/search';
-import { cryptoButtonsContainer, getBinancedata, toggleButtons } from './binance/binance';
-import getOpenWeatherData from './openweather/openweather';
-import getUnsplashData from './unsplash/unsplash';
-import getStormglassData from './stormglass/stormglass';
+import displayClock from './clock/clock.js'
+import {buttonsContainer, searchContainer, toggleEngineButtons, sendSearch} from './search/search.js'
+import {cryptoButtonsContainer, getBinancedata, toggleButtons} from './binance/binance.js'
+import getOpenWeatherData from './openweather/openweather.js'
+import getUnsplashData from './unsplash/unsplash.js'
+import getStormglassData from './stormglass/stormglass.js'
 
-// clock
-displayClock();
+// Clock
+displayClock()
 
-// search
-buttonsContainer.addEventListener('click', toggleEngineButtons);
-searchContainer.addEventListener('keypress', sendSearch);
+// Search
+buttonsContainer.addEventListener('click', toggleEngineButtons)
+searchContainer.addEventListener('keypress', sendSearch)
 
-// binance
-getBinancedata();
-cryptoButtonsContainer.addEventListener('click', toggleButtons);
+// Binance
+getBinancedata()
+cryptoButtonsContainer.addEventListener('click', toggleButtons)
 
-// openweather
-getOpenWeatherData();
+// Openweather
+getOpenWeatherData()
 
-// unsplash
-getUnsplashData();
+// Unsplash
+getUnsplashData()
 
-// stormglass
-getStormglassData();
+// Stormglass
+getStormglassData()
