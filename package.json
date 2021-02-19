@@ -1,6 +1,6 @@
 {
   "name": "pomme-page",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "une homepage pour mon navigateur",
   "main": "src/index.pug",
   "author": "vinz",
