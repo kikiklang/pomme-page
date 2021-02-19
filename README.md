@@ -1,130 +1,127 @@
-<!-- PROJECT LOGO -->
-<br />
+<div align="center">
+    <h1>Pomme Page</h1>
+    <b>big buttons with easy click startpage for a browser</b>
+</div>
+
 <p align="center">
-  <h1 align="center">pomme page</h1>
-  <p align="center">
-    A start page for a browser
-    <br />
-    <br />
-    <br />
-  </p>
+  <img src="./src/assets/images/screenshot.png">
 </p>
 
+## Index
+- [Pomme Page](#)
+  - [Features](#features)
+  - [Built With](#Built-with)
+  - [Getting Started](#Getting-Started)
+  - [Installation](#Installation)
+  - [Usage](#Usage)
+  - [Modules](#Modules)
+  - [Customization](#Customization)
+    - [Layout](#Layout)
+    - [Links](#links)
+    - [Modules](#Modules)
+    - [Colors](#Colors)
+  - [Deploying](#Deploying)
+  - [Contribution](#Contribution)
+  - [Licence](#Licence)
 
+## Features:
+- **theming** Custom colors and fonts with css variables.
+- **Responsive** Unpredictive layout thanks to CSS grid :)
+- **Modules** for informations other than links.
 
-<details open="open">
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#license">License</a></li>
-  </ol>
-</details>
-
-
-
-## About The Project
-
-[![Pomme page Screen Shot]](./src/assets/images/screenshot.png)
-
-I found a pretty cool [r/startpages](https://www.reddit.com/r/startpages/) that motivated me to make my own browser homepage. This project was also a good opportunity to test new things so it's probably over complicated for a simple homepage :).
-
-The crypto chart is cool. the line of the graph represents the evolution of the value of the selected currency for the last 7 days (if I read correctly the binance API documentation).
-
-### Built With
-
-* [Parcel](https://parceljs.org/) Blazing fast, zero configuration web application bundler
-
-* [apexcharts](https://apexcharts.com/) Modern & Interactive Open-source Charts
+## Built with
+- [Parcel](https://parceljs.org/) Blazing fast, zero configuration web application bundler
+- [Pug](https://pugjs.org/api/getting-started.html) Pug is a template engine for Node and for the browser. It compiles to HTML and has a simplified syntax.
 
 ## Getting Started
+To get a local copy up and running, you will need:
 
-To get a local copy up and running follow these steps.
+- [git](https://git-scm.com/downloads)
+- [nodejs](https://nodejs.org/en/)- Node.js® is a JavaScript runtime that will help running javascript code   outside your browser
 
-### Prerequisites
-
-* git - [git](https://git-scm.com/downloads)
-* Node - Node.js® is a JavaScript runtime that will help running javascript code outside your browser. download from here -> [nodejs.org](https://nodejs.org/en/)
-* parcel - once you have installed node, use this command in a terminal to install this package globally on your machine
-  ```sh
-  npm install -g parcel-bundler
-  ```
-
-### Installation
-
-1. Sign in and get a free API Key at [openweathermap](https://openweathermap.org/api).
+## Installation
+1. Once nodeJs is installed, install Parcel globally on your machine.
+    ```sh
+    npm install -g parcel-bundler
+    ```
 2. Paste this command in your terminal to clone the repository inside the folder of your choice 
-   ```sh
-   git clone git@github.com:kikiklang/pomme-page.git
-   ```
-3. Still in your terminal, move into freshly copied repo and run this command to install all project dependencies
-   ```sh
-   npm install
-   ```
-4. You can now open the project in your IDE and go straight to src/js/weather.js to paste you openweather API key. ALso, add the city of your choice to the line above.
-   ```JS
-   const city = 'xxxxxxxxxxxxxx';
-   const apikey = 'PASTE YOUR API KEY';
-   ```
-5. Now change city name in the template "src/html/weather.pug"
-   ```html
-    city-name your place
-   ```
-
+    ```sh
+    git clone git@github.com:kikiklang/pomme-page.git
+    ```
+3. Still in your terminal, move into pomme-page freshly created folder and run this command to install all project dependencies
+    ```sh
+    npm install
+    ```
 
 ## Usage
-
-To run this project locally and open the page at http://localhost:3000
-```sh
+ You can now open the project in your IDE and run this project locally
+  ```sh
   npm run dev
-```
+  ```
 
-To bundle your code - ready to ship, cleaned and lightweight
-```sh
+  To bundle your code - ready to ship, cleaned and lightweight
+  ```sh
   npm run build
-```
+  ```
 
-To test locally your production build
-```sh
+  To test your production build locally
+  ```sh
   npm run serve
-```
+  ```
 
-To delete development , build and cache folders
-```sh
+  To delete development, build and cache folders
+  ```sh
   npm run clean
-```
+  ```
 
-To check and fix your errors in code
-```sh
+  To check and fix your js syntax and errors in code
+  ```sh
   npm run lint
-```
+  ```
 
-To lint and prettify your code
-```sh
+  To prettify your code
+  ```sh
   npm run format
-```
+  ```
 
-## Customize
+## Modules
+Pomme Page use modules to display informations other than links. Currently, there is: 
+- **clock** time & date
+- **binance** past and current crypto currencies data
+- **openweather** current weather (needs API key: [openweather](https://openweathermap.org/unsplash)) 
+- **unsplash** random image display (needs API key: [unsplash](https://unsplash.com/developers))
+- **stormglass** sea condition (needs API key: [stormglass](https://stormglass.io/))
 
-### Crypto chart
-If you want to change currencies choice, head to "src/html/chart.pug" and simply change currencies symbols to desired ones. But always keep the first one with the type attribute to 'active'. I'm not sure how much you can fit in there until it overlap or break.
+Find the module in the src folder and his javascript file. You can add your api key here.
 
-### Pomme
-check "/src/html/index.pug" . simply type "pomme"  anywhere to add a decorative green square. :)
+## Customization
 
-<!-- LICENSE -->
+### Layout
+Layout is made with CSS grid, you can simply move things around in index.pug file
+
+### Links
+To add a link, go to index.pug and make a myrtille. It's a pug function that take 3 parameters:
+- domain
+- svg viewbox
+- svg path
+
+### Modules
+To remove a module, you have to delete the corresponding folder in src and then and remove all imports found in the 3 index files (pug, css, js).
+
+### Colors
+Colors theming is not perfect yet. but can your make your theme with the css variables found in index.css
+
+## Contribution
+Please free to give what you have in this project if you like it. It would nice to make:
+- new modules
+- new color themes
+- new icons
+- refactor
+- anything
+
+## Deploying
+After the build process, you'll find a dist folder that parcel just created. We still have API Keys in the code. In my case, i deploy this behind a caddy reverse proxy and limit/filter access to this static files only from my personal computer IP.
+
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
