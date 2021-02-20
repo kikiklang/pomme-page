@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="100px" src="./src/assets/icons/logo/logo.svg">
+</p>
+
 <div align="center">
     <h1>Pomme Page</h1>
     <b>big buttons with easy click startpage for a browser</b>
