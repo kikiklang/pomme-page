@@ -111,14 +111,14 @@ Links images work in svg format. To add a link, go to `src/index.pug` and make a
 
 ### Modules
 - **binance**:  To get the crypto-currencies you want. Head to `src/binance/binance.pug` and change binance-selector-button value to desired currency symbols. Javascript will do the work behind.
-- **openweather**:  you will need to provide the city name in `src/openweather/openweather.js` + units of measurement. standard, metric and imperial units are available.
+- **openweather**:  you will need to provide the city name in `src/openweather/openweather.js` + units of measurement. standard, metric and imperial units are available. You will also need to change the city name abbreviation in `src/openweather/openweather.pug`
 - **unsplash**: you can provide another collection ID ([unsplash collections](https://unsplash.com/collections)) in `src/unsplash/unsplash.js` file
 - **stormglass**: you will need latitude and longitude of your surf spot. Set the variables in `src/stormglass/stormglass.js`
 
 To remove a module, you have to delete the corresponding folder in src and then remove all imports found in the 3 index files (pug, css, js).
 
 ### Colors
-Colors theming is not perfect yet, but you cqn make your theme with the css variables found in `index.css`
+Colors theming is not perfect yet, but you can make your theme with the css variables found in `index.css`
 
 ## Contribution
 Please feel free to give what you have in this project if you like it. It would nice to make:
