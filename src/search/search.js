@@ -19,6 +19,7 @@ function sendSearch(event) {
 		const domain = [...engine.attributes][3].value
 		const url = `${domain}?q=${input.value}`
 		window.open(url)
+		input.value = ''
 	}
 }
 
