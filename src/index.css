@@ -127,9 +127,8 @@ body {
   height: 100%;
   background-color: var(--myrtille-background);
   border-radius: 10px;
-  border-radius: 10px;
-  animation: fadein-page 300ms ease-out normal backwards;
   transition: 100ms ease-in-out;
+  animation: fadein-page 300ms ease-out normal backwards;
 }
 
 .myrtille-link:hover {
