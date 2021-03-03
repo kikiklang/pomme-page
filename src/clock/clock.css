@@ -8,6 +8,8 @@ pp-clock {
   align-items: center;
   background-color: var(--module-background);
   border-radius: 10px;
+  animation: fadein-page 250ms ease-out normal backwards;
+  animation-delay: 200ms;
 }
 
 .pp-time {

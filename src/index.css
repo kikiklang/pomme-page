@@ -127,7 +127,9 @@ body {
   height: 100%;
   background-color: var(--myrtille-background);
   border-radius: 10px;
-  transition: 200ms ease-in-out;
+  border-radius: 10px;
+  animation: fadein-page 300ms ease-out normal backwards;
+  transition: 100ms ease-in-out;
 }
 
 .myrtille-link:hover {
@@ -151,6 +153,7 @@ pomme {
   grid-row: span 2;
   background-color: var(--pomme-background);
   border-radius: 10px;
+  animation: fadein-page 200ms ease-out normal backwards;
 }
 
 raisin {
@@ -158,6 +161,8 @@ raisin {
   background-color: var(--main);
   border: 2px solid var(--pomme-background);
   border-radius: 10px;
+  animation: fadein-page 50ms ease-out normal backwards;
+  animation-delay: 50ms;
 }
 
 pp-loader {
@@ -203,19 +208,18 @@ pp-loader-dot:nth-child(4) {
 /******* ANIMATION *******/
 
 @keyframes module-display {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @keyframes loader-animation {
-  100% {
-    background-color: var(--module-background);
-  }
+  100% { background-color: var(--module-background); }
+}
+
+@keyframes fadein-page {
+  0% { transform: scale(0); }
+  70% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 /******* IMPORTS *******/

@@ -9,6 +9,8 @@ pp-search {
   padding: 0 var(--spacing-0);
   background-color: var(--search-background);
   border-radius: 10px;
+  animation: fadein-page 250ms ease-out normal backwards;
+  animation-delay: 150ms;
 }
 
 pp-engine-buttons {
