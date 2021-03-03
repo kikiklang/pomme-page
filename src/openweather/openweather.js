@@ -30,7 +30,7 @@ function displayOpenWeatherData(data) {
 }
 
 async function getOpenWeatherData() {
-	const apiKey = 'cbc6b50c0f3e3669e09bf0450b3b8c1e'
+	const apiKey = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 	const url = 'https://api.openweathermap.org/data/2.5/weather'
 	const city = 'La Roche-sur-Yon'
 	const units = 'metric'
