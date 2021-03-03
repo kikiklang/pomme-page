@@ -19,11 +19,6 @@ pp-openweather-icon {
   align-items: center;
 }
 
-pp-openweather-icon .icon[state='show'] {
-  width: var(--spacing-4);
-  height: var(--spacing-4);
-}
-
 pp-openweather-icon .icon[state='hide'] {
   display: none;
 }
