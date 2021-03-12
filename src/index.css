@@ -37,13 +37,6 @@ textarea {
   --pomme-background: hsl(118, 18%, 66%);
   --myrtille-background: hsl(235, 17%, 63%);
 
-  /* --main: #213f28;
-  --main-light: #6e833e;
-  --module-background: #a7c957;
-  --search-background: #9fa892;
-  --pomme-background: #f2e8cf;
-  --myrtille-background: #6a994e; */
-
   /* font-family */
   --font-family-sans: system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, ubuntu, 'Helvetica Neue', sans-serif;
 
@@ -61,16 +54,6 @@ textarea {
   --font-weight-regular: 400;
   --font-weight-bold: 700;
 
-  /* letter-spacing */
-  --tracking-000: -0.05em;
-  --tracking-00: -0.025em;
-  --tracking-0: 0;
-  --tracking-1: 0.025em;
-  --tracking-2: 0.05em;
-  --tracking-3: 0.1em;
-  --tracking-4: 0.25em;
-  --tracking-5: 0.5em;
-
   /* sizing property -> margin, padding, height */
   --spacing-0000: 4px;
   --spacing-000: 8px;
@@ -81,30 +64,14 @@ textarea {
   --spacing-3: 48px;
   --spacing-4: 64px;
   --spacing-5: 96px;
-  --spacing-6: 128px;
 
   /* Widths applied as max-width */
   --width-00: 120px;
-  --width-0: 180px;
-  --width-1: 320px;
-  --width-2: 396px;
-  --width-3: 448px;
-  --width-4: 512px;
-  --width-5: 576px;
-  --width-6: 672px;
-  --width-7: 768px;
-  --width-8: 896px;
-  --width-9: 1024px;
-  --width-10: 1152px;
-  --width-11: 1280px;
-  --width-12: 1440px;
 
   /* Grid gaps */
   --gap-00: 12px;
   --gap-0: 16px;
   --gap-1: 24px;
-  --gap-2: 36px;
-  --gap-3: 48px;
 }
 
 /************** GLOBAL STYLES **************/
