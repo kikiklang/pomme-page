@@ -7,11 +7,13 @@
   "license": "MIT",
   "scripts": {
     "dev": "npm run clean && npx parcel src/index.pug --out-dir development -p 3000",
-    "build": "npm run clean && npx parcel build src/index.pug --out-dir dist --public-url ./ --no-cache",
+    "build": "npm run clean && npx parcel build src/index.pug --no-cache",
     "serve": "npx serve dist",
     "clean": "rimraf ./development && rimraf -rf ./.cache && rimraf -rf ./dist",
-    "lint": "npm run clean && xo  --env=browser --fix --no-semicolon './**/*.js' && stylelint '**/*.css'",
-    "format": "npm run clean && stylelint --fix './**/*.css' && prettier --write 'src/**/*.pug'"
+    "prettier": "prettier --write 'src/**/*.pug'",
+    "stylelint": "stylelint --fix './**/*.css'",
+    "xo": "xo  --env=browser --fix",
+    "format": "npm run clean && npm run prettier && npm run stylelint && npm run xo"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -51,9 +53,12 @@
       "selector-type-no-unknown": null
     }
   },
+  "xo": {
+    "semicolon": false
+  },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run clean && npm run lint && npm run format"
+      "pre-commit": "npm run format"
     }
   }
 }
