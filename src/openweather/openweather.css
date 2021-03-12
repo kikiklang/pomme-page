@@ -12,14 +12,14 @@ pp-openweather {
   animation: module-display 500ms ease-in-out;
 }
 
-pp-openweather-icon {
+pp-openweather-icons {
   display: flex;
   flex: 1;
   justify-content: center;
   align-items: center;
 }
 
-pp-openweather-icon .icon[state='hide'] {
+pp-openweather-icons .pp-openweather-icon[data-state='hide'] {
   display: none;
 }
 

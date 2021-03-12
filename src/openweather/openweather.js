@@ -15,12 +15,14 @@ function displayOpenWeatherData(data) {
 	const openWeatherContainer = document.querySelector('pp-openweather')
 	const temporary = document.querySelector('.temp-value')
 	const humid = document.querySelector('.humid-value')
-	const icons = [...document.querySelector('pp-openweather-icon').childNodes]
+	const icons = [...document.querySelectorAll('.pp-openweather-icon')]
 
-	icons.map(icon => {
-		return icon.getAttribute('type').includes(data.weather[0].main.toLowerCase()) ?
-			icon.setAttribute('state', 'show') :
-			icon.setAttribute('state', 'hide')
+	icons.forEach(icon => {
+		if (icon.getAttribute('data-type').includes(data.weather[0].main.toLowerCase())) {
+			icon.dataset.state = 'show'
+		} else {
+			icon.dataset.state = 'hide'
+		}
 	})
 
 	temporary.innerHTML = data.main.temp > 0 && data.main.temp < 10 ? `0${data.main.temp}°` : `${data.main.temp}°`
@@ -30,7 +32,7 @@ function displayOpenWeatherData(data) {
 }
 
 async function getOpenWeatherData() {
-	const apiKey = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+	const apiKey = process.env.OPEN_WEATHER_API_KEY
 	const url = 'https://api.openweathermap.org/data/2.5/weather'
 	const city = 'La Roche-sur-Yon'
 	const units = 'metric'
