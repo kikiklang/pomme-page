@@ -96,7 +96,12 @@ Pomme Page use modules to display informations other than links. Currently, ther
 - **unsplash** random image display (needs API key: [unsplash](https://unsplash.com/developers))
 - **stormglass** sea condition (needs API key: [stormglass](https://stormglass.io/))
 
-Find the module in the `src` folder and his javascript file. You can add your api key here.
+to add your API keys, create a `.env` file at project's root and put your keys here like this:
+```sh
+OPEN_WEATHER_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+UNSPLASH_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+STORMGLASS_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
 
 ## Customization
 
