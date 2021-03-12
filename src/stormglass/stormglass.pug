@@ -8,7 +8,17 @@ pp-stormglass
       p.watertemp-value
       p.watertemp-label water t°
     pp-winddir
-      img.winddir-icon(src='./assets/icons/stormglass/arrow.svg')
+      svg.winddir-icon(
+        xmlns='http://www.w3.org/2000/svg',
+        width='24',
+        height='24',
+        fill='none',
+        stroke='var(--main)',
+        stroke-width='3',
+        stroke-linecap='round',
+        stroke-linejoin='round'
+      )
+        path(d='M12 5v14M19 12l-7 7-7-7')
       p.winddir-label wind dir.
     pp-windspeed
       p.windspeed-value
@@ -22,7 +32,17 @@ pp-stormglass
       p.waveperiod-value
       p.waveperiod-label wave per.
     pp-wavedir
-      img.wavedir-icon(src='./assets/icons/stormglass/arrow.svg', state='hide')
+      svg.wavedir-icon(
+        xmlns='http://www.w3.org/2000/svg',
+        width='24',
+        height='24',
+        fill='none',
+        stroke='var(--main)',
+        stroke-width='3',
+        stroke-linecap='round',
+        stroke-linejoin='round'
+      )
+        path(d='M12 5v14M19 12l-7 7-7-7')
       p.wavedir-label wave dir.
 
 pp-stormglass-loader-container
