@@ -22,7 +22,7 @@ function displayUnsplashImage(data) {
 }
 
 async function getUnsplashData() {
-	const apiKey = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+	const apiKey = process.env.UNSPLASH_API_KEY
 	const orientation = 'landscape'
 	const collectionId = 789734
 	const url = 'https://api.unsplash.com/'

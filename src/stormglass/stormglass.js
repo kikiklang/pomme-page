@@ -19,8 +19,6 @@ async function displayStormglassData(data) {
 	const wavePeriod = document.querySelector('.waveperiod-value')
 	const wavedir = document.querySelector('.wavedir-icon')
 
-	console.log(data.waveDirection)
-
 	waterTemporary.innerHTML = `${Math.round(data.waterTemperature.meto || data.waterTemperature.noaa || data.waterTemperature.sg)}°`
 	windDirection.style.transform = `rotate(${data.windDirection.icon || data.windDirection.noaa || data.windDirection.sg}deg)`
 	windSpeed.innerHTML = `${data.windSpeed.icon || data.windSpeed.noaa || data.windSpeed.sg} <span class="pp-stormglass-unit">m/s</span>`
@@ -33,7 +31,7 @@ async function displayStormglassData(data) {
 
 async function getStormglassData() {
 	const currentISODate = new Date().toISOString().slice(0, 13)
-	const apiKey = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+	const apiKey = process.env.STORMGLASS_API_KEY
 	const lat = 46.365891
 	const lng = -1.478393
 	const url = 'https://api.stormglass.io/v2/'
