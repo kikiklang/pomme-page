@@ -18,7 +18,13 @@ pp-stormglass > * {
   height: var(--spacing-4);
 }
 
-pp-header > p {
+pp-header > p,
+.watertemp-value,
+.winddir-value,
+.windspeed-value,
+.waveheight-value,
+.waveperiod-value,
+.wavedir-value {
   color: var(--main);
   font-weight: var(--font-weight-bold);
   font-size: var(--scale-2);
@@ -40,17 +46,6 @@ pp-secondrow > * {
   color: var(--main-light);
   font-weight: var(--font-weight-bold);
   font-size: var(--scale-00);
-}
-
-.watertemp-value,
-.winddir-value,
-.windspeed-value,
-.waveheight-value,
-.waveperiod-value,
-.wavedir-value {
-  color: var(--main);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--scale-2);
 }
 
 .pp-stormglass-unit {
