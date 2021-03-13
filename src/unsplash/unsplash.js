@@ -3,39 +3,39 @@
 const unsplashLoaderContainer = document.querySelector('pp-unsplash-loader-container')
 
 function handleUnsplashApiError(response) {
-	const unsplashErrorContainer = document.querySelector('pp-unsplash-error-container')
-	const unsplashErrorCode = document.querySelector('.unsplash-error-code')
+  const unsplashErrorContainer = document.querySelector('pp-unsplash-error-container')
+  const unsplashErrorCode = document.querySelector('.unsplash-error-code')
 
-	unsplashErrorCode.innerHTML = response.status
-	unsplashLoaderContainer.style.display = 'none'
-	unsplashErrorContainer.style.display = 'flex'
+  unsplashErrorCode.innerHTML = response.status
+  unsplashLoaderContainer.style.display = 'none'
+  unsplashErrorContainer.style.display = 'flex'
 }
 
 function displayUnsplashImage(data) {
-	const image = document.querySelector('.unsplash-small')
-	const unsplashLoader = document.querySelector('pp-unsplash-loader-container')
-	const unsplashContainer = document.querySelector('pp-unsplash')
+  const image = document.querySelector('.unsplash-small')
+  const unsplashLoader = document.querySelector('pp-unsplash-loader-container')
+  const unsplashContainer = document.querySelector('pp-unsplash')
 
-	image.src = data.urls.small
-	unsplashLoader.style.display = 'none'
-	unsplashContainer.style.display = 'flex'
+  image.src = data.urls.small
+  unsplashLoader.style.display = 'none'
+  unsplashContainer.style.display = 'flex'
 }
 
 async function getUnsplashData() {
-	const apiKey = process.env.UNSPLASH_API_KEY
-	const orientation = 'landscape'
-	const collectionId = process.env.UNSPLASH_COLLECTION_ID
-	const url = 'https://api.unsplash.com/'
-	const path = 'photos/random/'
-	const parameters = `client_id=${apiKey}&orientation=${orientation}&collections=${collectionId}`
-	const response = await fetch(`${url}${path}?${parameters}`)
+  const apiKey = process.env.UNSPLASH_API_KEY
+  const orientation = 'landscape'
+  const collectionId = process.env.UNSPLASH_COLLECTION_ID
+  const url = 'https://api.unsplash.com/'
+  const path = 'photos/random/'
+  const parameters = `client_id=${apiKey}&orientation=${orientation}&collections=${collectionId}`
+  const response = await fetch(`${url}${path}?${parameters}`)
 
-	if (response.ok) {
-		const jsonResponse = await response.json()
-		return displayUnsplashImage(jsonResponse)
-	}
+  if (response.ok) {
+    const jsonResponse = await response.json()
+    return displayUnsplashImage(jsonResponse)
+  }
 
-	return handleUnsplashApiError(response)
+  return handleUnsplashApiError(response)
 }
 
 export default getUnsplashData

@@ -54,7 +54,8 @@
     }
   },
   "xo": {
-    "semicolon": false
+    "semicolon": false,
+    "space": true
   },
   "husky": {
     "hooks": {
