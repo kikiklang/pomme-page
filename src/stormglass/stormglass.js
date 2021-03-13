@@ -12,6 +12,7 @@ function handleStormGlassApiError(response) {
 
 async function displayStormglassData(data) {
 	const stormglassContainer = document.querySelector('pp-stormglass')
+	const spotName = document.querySelector('.header-spot')
 	const waterTemporary = document.querySelector('.watertemp-value')
 	const windDirection = document.querySelector('.winddir-icon')
 	const windSpeed = document.querySelector('.windspeed-value')
@@ -19,6 +20,7 @@ async function displayStormglassData(data) {
 	const wavePeriod = document.querySelector('.waveperiod-value')
 	const wavedir = document.querySelector('.wavedir-icon')
 
+	spotName.innerHTML = process.env.STORMGLASS_SPOT_NAME
 	waterTemporary.innerHTML = `${Math.round(data.waterTemperature.meto || data.waterTemperature.noaa || data.waterTemperature.sg)}°`
 	windDirection.style.transform = `rotate(${data.windDirection.icon || data.windDirection.noaa || data.windDirection.sg}deg)`
 	windSpeed.innerHTML = `${data.windSpeed.icon || data.windSpeed.noaa || data.windSpeed.sg} <span class="pp-stormglass-unit">m/s</span>`
@@ -32,8 +34,8 @@ async function displayStormglassData(data) {
 async function getStormglassData() {
 	const currentISODate = new Date().toISOString().slice(0, 13)
 	const apiKey = process.env.STORMGLASS_API_KEY
-	const lat = 46.365891
-	const lng = -1.478393
+	const lat = process.env.STORMGLASS_LATITUDE
+	const lng = process.env.STORMGLASS_LONGITUDE
 	const url = 'https://api.stormglass.io/v2/'
 	const path = 'weather/point'
 	const parameters = ['waterTemperature', 'waveDirection', 'waveHeight', 'wavePeriod', 'windDirection', 'windSpeed']

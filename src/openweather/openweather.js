@@ -16,6 +16,7 @@ function displayOpenWeatherData(data) {
 	const temporary = document.querySelector('.temp-value')
 	const humid = document.querySelector('.humid-value')
 	const icons = [...document.querySelectorAll('.pp-openweather-icon')]
+	const cityName = document.querySelector('.city-value')
 
 	icons.forEach(icon => {
 		if (icon.getAttribute('data-type').includes(data.weather[0].main.toLowerCase())) {
@@ -25,7 +26,8 @@ function displayOpenWeatherData(data) {
 		}
 	})
 
-	temporary.innerHTML = data.main.temp > 0 && data.main.temp < 10 ? `0${data.main.temp}°` : `${data.main.temp}°`
+	cityName.innerHTML = process.env.OPEN_WEATHER_CITY_DISPLAY_NAME || process.env.OPEN_WEATHER_CITY_QUERY_NAME
+	temporary.innerHTML = data.main.temp > 0 && data.main.temp < 10 ? `0${Math.round(data.main.temp)}°` : `${Math.round(data.main.temp)}°`
 	humid.innerHTML = `${data.main.humidity}%`
 	openWeatherLoader.style.display = 'none'
 	openWeatherContainer.style.display = 'flex'
@@ -34,8 +36,8 @@ function displayOpenWeatherData(data) {
 async function getOpenWeatherData() {
 	const apiKey = process.env.OPEN_WEATHER_API_KEY
 	const url = 'https://api.openweathermap.org/data/2.5/weather'
-	const city = 'La Roche-sur-Yon'
-	const units = 'metric'
+	const city = process.env.OPEN_WEATHER_CITY_QUERY_NAME
+	const units = process.env.OPEN_WEATHER_UNITS
 	const response = await fetch(`${url}?q=${city}&units=${units}&APPID=${apiKey}`)
 
 	if (response.ok) {

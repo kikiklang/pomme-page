@@ -1,6 +1,6 @@
 // //////// CRYPTO //////// //
 
-let cryptoPicked = 'BTC'
+let cryptoPicked = process.env.BINANCE_SYMBOLS.split(' ')[0].toUpperCase()
 const cryptoButtonsContainer = document.querySelector('pp-binance-selector')
 const binanceLoaderContainer = document.querySelector('pp-binance-loader-container')
 
@@ -19,6 +19,20 @@ function handleBinanceApiError(historicalDataResponse, currentDataResponse) {
 	binanceErrorCode.innerHTML = historicalDataResponse.status
 	binanceLoaderContainer.style.display = 'none'
 	binanceErrorContainer.style.display = 'flex'
+}
+
+function generateButtons() {
+	const symbolsList = process.env.BINANCE_SYMBOLS.split(' ')
+
+	symbolsList.forEach(symbol => {
+		const newButton = document.createElement('button')
+		cryptoButtonsContainer.append(newButton)
+		newButton.className = 'binance-selector-button'
+		newButton.dataset.state = 'inactive'
+		newButton.innerHTML = symbol
+	})
+
+	cryptoButtonsContainer.firstChild.dataset.state = 'active'
 }
 
 function generateChartLine(data) {
@@ -50,12 +64,15 @@ function generateChartLine(data) {
 function completeFooterValues(data) {
 	const differenceValue = document.querySelector('.binance-difference-value')
 	const currentValue = document.querySelector('.binance-current-value')
+	const pairSymbol = process.env.BINANCE_PAIR_SYMBOL
+
+	console.log(pairSymbol)
 
 	differenceValue.innerHTML =
 		data.priceChange > 0 ?
-			`${Math.round(data.priceChange)}<span class="binance-money-unit">€</span>` :
-			`${Math.round(data.priceChange)}<span class="binance-money-unit">€</span>`
-	currentValue.innerHTML = `${Math.round(data.lastPrice)}<span class="binance-money-unit">€</span>`
+			`${Math.round(data.priceChange)}<span class="binance-money-unit">${pairSymbol}</span>` :
+			`${Math.round(data.priceChange)}<span class="binance-money-unit">${pairSymbol}</span>`
+	currentValue.innerHTML = `${Math.round(data.lastPrice)}<span class="binance-money-unit">${pairSymbol}</span>`
 }
 
 function displayBinanceData(historicalData, currentData) {
@@ -71,10 +88,11 @@ function displayBinanceData(historicalData, currentData) {
 
 async function getBinancedata() {
 	const url = 'https://api.binance.com'
+	const pair = process.env.BINANCE_PAIR
 	const klinesPath = '/api/v3/klines'
-	const klinesParameters = `?symbol=${cryptoPicked}EUR&interval=1d&limit=7`
+	const klinesParameters = `?symbol=${cryptoPicked}${pair}&interval=1d&limit=7`
 	const tickerPath = '/api/v3/ticker/24hr'
-	const tickerParameters = `?symbol=${cryptoPicked}EUR`
+	const tickerParameters = `?symbol=${cryptoPicked}${pair}`
 	const [historicalDataResponse, currentDataResponse] = await Promise.all([
 		fetch(`${url}${klinesPath}${klinesParameters}`),
 		fetch(`${url}${tickerPath}${tickerParameters}`)
@@ -95,12 +113,12 @@ async function getBinancedata() {
 function toggleButtons(event) {
 	const buttonsList = document.querySelectorAll('.binance-selector-button')
 	buttonsList.forEach(button => {
-		button.type = 'inactive'
+		button.dataset.state = 'inactive'
 	})
-	event.target.type = 'active'
+	event.target.dataset.state = 'active'
 	cryptoPicked = event.target.innerHTML.toUpperCase()
 
 	getBinancedata()
 }
 
-export {cryptoButtonsContainer, getBinancedata, toggleButtons}
+export {generateButtons, cryptoButtonsContainer, getBinancedata, toggleButtons}

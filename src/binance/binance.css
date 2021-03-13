@@ -28,11 +28,11 @@ pp-binance-selector {
   cursor: pointer;
 }
 
-.binance-selector-button[type='active'] {
+.binance-selector-button[data-state='active'] {
   color: var(--main);
 }
 
-.binance-selector-button[type='inactive'] {
+.binance-selector-button[data-state='inactive'] {
   color: var(--main-light);
 }
 
@@ -77,8 +77,10 @@ pp-binance-current {
 }
 
 .binance-money-unit {
+  position: relative;
+  top: -1px;
   color: var(--main-light);
-  font-size: var(--scale-1);
+  font-size: var(--scale-0);
 }
 
 pp-binance-loader-container {

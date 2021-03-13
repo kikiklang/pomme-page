@@ -24,7 +24,7 @@ function displayUnsplashImage(data) {
 async function getUnsplashData() {
 	const apiKey = process.env.UNSPLASH_API_KEY
 	const orientation = 'landscape'
-	const collectionId = 789734
+	const collectionId = process.env.UNSPLASH_COLLECTION_ID
 	const url = 'https://api.unsplash.com/'
 	const path = 'photos/random/'
 	const parameters = `client_id=${apiKey}&orientation=${orientation}&collections=${collectionId}`
