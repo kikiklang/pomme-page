@@ -8,7 +8,12 @@
 </div>
 
 <p align="center">
-  <img src="./src/assets/images/screenshot.png">
+  <img width="700px"  src="./src/assets/images/screenshot.png">
+</p>
+
+<p align="center">
+  <img height="330px"  src="./src/assets/images/screenshot2.png">
+  <img height="330px"  src="./src/assets/images/screenshot3.png">
 </p>
 
 ## Index
@@ -90,7 +95,7 @@ Pomme Page use modules to display informations other than links. Currently, ther
 - **binance** past and current crypto currencies data
 - **openweather** current weather (needs API key: [openweather](https://openweathermap.org/unsplash)) 
 - **unsplash** random image display (needs API key: [unsplash](https://unsplash.com/developers))
-- **stormglass** sea condition (needs API key: [stormglass](https://stormglass.io/))
+- **stormglass** sea condition (needs API key: [stormglass](https://stormglass.io/)) [free up to 50 requests per day]
 
 ## Customization
 
