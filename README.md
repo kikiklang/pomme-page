@@ -79,12 +79,7 @@ To get a local copy up and running, you will need:
   npm run clean
   ```
 
-  To check and fix your js syntax and errors in code
-  ```sh
-  npm run lint
-  ```
-
-  To prettify your code
+  To prettify and fix your code
   ```sh
   npm run format
   ```
@@ -115,7 +110,7 @@ To remove a module, you have to delete the corresponding folder in src and then 
 You can make your theme with the css variables found in `index.css`
 
 ## Contribution
-Please feel free to give what you have in this project if you like it and you have some time to spare.
+Please feel free to give what you have in this project if you like it and have some time to spare.
 
 ## Deploying
 After the build process, you'll find a `dist` folder that parcel just created. We still have API Keys in the code. In my case, i deploy this behind a caddy reverse proxy and limit/filter access to this static files only from my personal computer IP.
