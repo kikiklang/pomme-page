@@ -56,6 +56,7 @@ To get a local copy up and running, you will need:
     ```sh
     npm install
     ```
+4. To finish the installation, you will have to provide a `.env` file where you can place your configuration variables like API keys. Put this file at the root of pomme-page folder. see example with the `.env.example` file.
 
 ## Usage
  You can now open the project in your IDE and run this project locally
@@ -96,13 +97,6 @@ Pomme Page use modules to display informations other than links. Currently, ther
 - **unsplash** random image display (needs API key: [unsplash](https://unsplash.com/developers))
 - **stormglass** sea condition (needs API key: [stormglass](https://stormglass.io/))
 
-to add your API keys, create a `.env` file at project's root and put your keys here like this:
-```sh
-OPEN_WEATHER_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-UNSPLASH_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-STORMGLASS_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-```
-
 ## Customization
 
 ### Layout
@@ -111,28 +105,17 @@ Layout is made with CSS grid, you can simply move things around in `src/index.pu
 ### Links
 Links images work in svg format. To add a link, go to `src/index.pug` and make a myrtille. It's a pug function that takes 3 parameters:
 - domain
-- svg viewbox
+- svg viewBox
 - svg path
 
 ### Modules
-- **binance**:  To get the crypto-currencies you want. Head to `src/binance/binance.pug` and change binance-selector-button value to desired currency symbols. Javascript will do the work behind.
-- **openweather**:  you will need to provide the city name in `src/openweather/openweather.js` + units of measurement. standard, metric and imperial units are available. You will also need to change the city name abbreviation in `src/openweather/openweather.pug`
-- **unsplash**: you can provide another collection ID ([unsplash collections](https://unsplash.com/collections)) in `src/unsplash/unsplash.js` file
-- **stormglass**: you will need latitude and longitude of your surf spot. Set the variables in `src/stormglass/stormglass.js`
-
 To remove a module, you have to delete the corresponding folder in src and then remove all imports found in the 3 index files (pug, css, js).
 
 ### Colors
-Colors theming is not perfect yet, but you can make your theme with the css variables found in `index.css`
+You can make your theme with the css variables found in `index.css`
 
 ## Contribution
-Please feel free to give what you have in this project if you like it. It would nice to make:
-- new modules
-- new color themes
-- fonts integration
-- new icons
-- refactor
-- anything
+Please feel free to give what you have in this project if you like it and you have some time to spare.
 
 ## Deploying
 After the build process, you'll find a `dist` folder that parcel just created. We still have API Keys in the code. In my case, i deploy this behind a caddy reverse proxy and limit/filter access to this static files only from my personal computer IP.
