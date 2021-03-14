@@ -20,7 +20,7 @@ pp-engine-buttons {
   width: 80px;
 }
 
-pp-engine-buttons > button {
+.pp-search-icon {
   width: var(--spacing-2);
   height: var(--spacing-2);
   padding: 0;
@@ -30,8 +30,12 @@ pp-engine-buttons > button {
   cursor: pointer;
 }
 
-pp-engine-buttons > button[type='inactive'] {
+.pp-search-icon[data-state='inactive'] {
   opacity: 0.5;
+}
+
+.pp-search-icon > path {
+  pointer-events: none;
 }
 
 .pp-search-input {
