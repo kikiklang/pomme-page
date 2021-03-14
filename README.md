@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="100px" src="./src/assets/icons/logo/logo.svg">
+  <img width="100px" src="./assets/icons/logo/logo.svg">
 </p>
 
 <div align="center">
@@ -8,12 +8,12 @@
 </div>
 
 <p align="center">
-  <img width="700px"  src="./src/assets/images/screenshot.png">
+  <img width="700px"  src="./assets/images/screenshot.png">
 </p>
 
 <p align="center">
-  <img height="330px"  src="./src/assets/images/screenshot2.png">
-  <img height="330px"  src="./src/assets/images/screenshot3.png">
+  <img height="330px"  src="./assets/images/screenshot2.png">
+  <img height="330px"  src="./assets/images/screenshot3.png">
 </p>
 
 ## Index
@@ -92,6 +92,7 @@ To get a local copy up and running, you will need:
 ## Modules
 Pomme Page use modules to display informations other than links. Currently, there is: 
 - **clock** time & date
+- **search** use duckduckgo or google search engines
 - **binance** past and current crypto currencies data
 - **openweather** current weather (needs API key: [openweather](https://openweathermap.org/unsplash)) 
 - **unsplash** random image display (needs API key: [unsplash](https://unsplash.com/developers))
