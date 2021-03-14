@@ -66,8 +66,6 @@ function completeFooterValues(data) {
   const currentValue = document.querySelector('.binance-current-value')
   const pairSymbol = process.env.BINANCE_PAIR_SYMBOL
 
-  console.log(pairSymbol)
-
   differenceValue.innerHTML =
     data.priceChange > 0 ?
       `${Math.round(data.priceChange)}<span class="binance-money-unit">${pairSymbol}</span>` :
