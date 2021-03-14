@@ -1,9 +1,9 @@
 {
   "name": "pomme-page",
   "version": "0.1.0",
-  "description": "une homepage pour mon navigateur",
+  "description": "Big buttons with easy click startpage for a browser",
   "main": "src/index.pug",
-  "author": "vinz",
+  "author": "kikiklang",
   "license": "MIT",
   "scripts": {
     "dev": "npm run clean && npx parcel src/index.pug --out-dir development -p 3000",
