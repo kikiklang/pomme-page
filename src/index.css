@@ -99,7 +99,7 @@ body {
 }
 
 .myrtille-link:hover {
-  border: 2px solid var(--pomme-background);
+  transform: rotate(10deg);
 }
 
 .myrtille-link svg {
