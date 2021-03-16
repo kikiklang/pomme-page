@@ -57,10 +57,10 @@
     ],
     "rules": {
       "selector-type-no-unknown": null,
+      "plugin/stylelint-group-selectors": true,
       "color-format/format": {
         "format": "hsl"
-      },
-      "plugin/stylelint-group-selectors": true
+      }
     }
   },
   "xo": {
