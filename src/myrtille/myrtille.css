@@ -1,0 +1,23 @@
+/************** MYRTILLE **************/
+
+.myrtille-link {
+  display: flex;
+  grid-row: span 2;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--myrtille-background);
+  border-radius: 10px;
+  transition: 100ms ease-in-out;
+  animation: fadein-page 300ms ease-out normal backwards;
+}
+
+.myrtille-link:hover {
+  transform: rotate(5deg);
+}
+
+.myrtille-link svg {
+  width: 50%;
+  fill: var(--main);
+}

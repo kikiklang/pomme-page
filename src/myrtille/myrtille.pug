@@ -1,0 +1,6 @@
+// //////// MYRTILLE //////// //
+
+mixin myrtille(domain, viewbox, svgPath)
+  a.myrtille-link(href="https://" + domain, target='_blank', rel='noopener noreferrer')
+    svg(xmlns='http://www.w3.org/2000/svg', fill-rule='evenodd', viewBox=viewbox)
+      path(d=svgPath)

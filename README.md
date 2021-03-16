@@ -36,7 +36,7 @@
 ## Features:
 - **theming** Custom colors with css variables.
 - **Responsive** Unpredictive layout thanks to CSS grid :)
-- **Modules** for informations other than links.
+- **Modular** each square is a module that you can move / remove / customize
 
 ## Built with
 - [Parcel](https://parceljs.org/) Blazing fast, zero configuration web application bundler
@@ -61,7 +61,7 @@ To get a local copy up and running, you will need:
     ```sh
     npm install
     ```
-4. To finish the installation, you will have to provide a `.env` file where you can place your configuration variables like API keys. Put this file at the root of pomme-page folder. see example with the `.env.example` file.
+4. To finish the installation, you will have to provide a `.env` file where you can place your configuration variables like API keys. Put this file at the root of pomme-page folder (see example with the `.env.example` file).
 
 ## Usage
  You can now open the project in your IDE and run this project locally
@@ -90,7 +90,9 @@ To get a local copy up and running, you will need:
   ```
 
 ## Modules
-Pomme Page use modules to display informations other than links. Currently, there is: 
+Pomme Page use modules to display informations: 
+- **myrtille** a big link with a nice icon of your favorite site
+- **raisin** a group of categorised links
 - **clock** time & date
 - **search** use duckduckgo or google search engines
 - **binance** past and current crypto currencies data
@@ -100,27 +102,26 @@ Pomme Page use modules to display informations other than links. Currently, ther
 
 ## Customization
 
-### Layout
-Layout is made with CSS grid, you can simply move things around in `src/index.pug` file
+### Modules Layout and display
+Layout is made with CSS grid, you can simply move modules around in `src/index.pug` file. To remove a module, you have to delete the corresponding folder in src and then remove all imports found in the 3 index files (pug, css, js).
 
-### Links
+### Myrtille
 Links images work in svg format. To add a link, go to `src/index.pug` and make a myrtille. It's a pug function that takes 3 parameters:
 - domain
 - svg viewBox
 - svg path
 
-### Modules
-To remove a module, you have to delete the corresponding folder in src and then remove all imports found in the 3 index files (pug, css, js).
+### Raisin
+It's also a pug function with two parameters that you can put in `src/index.pug`. You must provide a name and an object of data. This object is declared in `src/raisin/raisin.pug`
 
 ### Colors
 You can make your theme with the css variables found in `index.css`
 
 ## Contribution
-Please feel free to give what you have in this project if you like it and have some time to spare.
+Please feel free to give what you have of just share ideas for this project if you like it and have some time to spare.
 
 ## Deploying
 After the build process, you'll find a `dist` folder that parcel just created. We still have API Keys in the code. In my case, i deploy this behind a caddy reverse proxy and limit/filter access to this static files only from my personal computer IP.
 
 ## License
-
 Distributed under the MIT License. See `LICENSE` for more information.
