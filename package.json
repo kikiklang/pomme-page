@@ -1,6 +1,6 @@
 {
   "name": "pomme-page",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Big buttons with easy click startpage for a browser",
   "main": "src/index.pug",
   "author": "kikiklang",
