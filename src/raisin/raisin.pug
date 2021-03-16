@@ -1,0 +1,39 @@
+// //////// RAISIN //////// //
+
+-
+  var dev = {
+    'regex101': 'regex101.com', 
+    'codewars': 'codewars.com', 
+    'dev.to': 'dev.to',
+    'css tricks': 'css-tricks.com'
+  }
+
+  var colors = {
+    'coolors': 'coolors.co',
+    'color space': 'mycolor.space/',
+    'color hunt': 'colorhunt.co',
+    'gradient magic': 'gradientmagic.com'
+  }
+
+  var css = {
+    'fancy borders': '9elements.github.io/fancy-border-radius',
+    'transform visualizer': 'css-transform.moro.es',
+    'css doodle': 'css-doodle.com',
+    'css stats': 'cssstats.com',
+  }
+
+  var fonts = {
+    'type scale': 'type-scale.com',
+    'fonts in use': 'fontsinuse.com',
+    'font joy': 'fontjoy.com',
+    'zenigata': 'typo.zenigata.fr',
+  }
+
+
+mixin raisin(title, data)
+  raisin
+    raisin-header 
+      p.raisin-title #{title}
+    raisin-links
+      each val, key in data
+        a.raisin-link(href="https://" + val, target='_blank', rel='noopener noreferrer') #{key}
