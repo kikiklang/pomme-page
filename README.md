@@ -121,7 +121,7 @@ You can make your theme with the css variables found in `index.css`
 Please feel free to contribute if you like this project and have some time to spare.
 
 ## Deploying
-After the build process, you'll find a `dist` folder that parcel just created. We still have API Keys in the code. In my case, i deploy this behind a caddy reverse proxy and limit/filter access to this static files only from my personal computer IP.
+After the build process, you'll find a `dist` folder that parcel just created. We still have API Keys in the code. In my case, i deploy this behind a caddy reverse proxy and limit/filter access to these static files only from my personal computer IP.
 
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.
