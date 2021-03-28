@@ -20,7 +20,7 @@
 - [Pomme Page](#)
   - [Features](#features)
   - [Built With](#Built-with)
-  - [Getting Started](#Getting-Started)
+  - [Getting Started](#Getting-started)
   - [Installation](#Installation)
   - [Usage](#Usage)
   - [Modules](#Modules)
@@ -31,6 +31,7 @@
     - [Colors](#Colors)
   - [Deploying](#Deploying)
   - [Contribution](#Contribution)
+  - [More Start Pages](#More-start-pages)
   - [Licence](#Licence)
 
 ## Features:
@@ -122,6 +123,9 @@ Please feel free to contribute if you like this project and have some time to sp
 
 ## Deploying
 After the build process, you'll find a `dist` folder that parcel just created. We still have API Keys in the code. In my case, i deploy this behind a caddy reverse proxy and limit/filter access to these static files only from my personal computer IP. At the end, you will load around 45 Kilobytes of html/css/js (15 Kilobytes gzipped) in your browser, which is quite light for a startpage i suppose.
+
+## More Start Pages
+You can find more lovely start pages for your browser here -> https://github.com/jnmcfly/awesome-startpage
 
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.
