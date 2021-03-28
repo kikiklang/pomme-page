@@ -23,9 +23,9 @@ async function displayStormglassData(data) {
   spotName.innerHTML = process.env.STORMGLASS_SPOT_NAME
   waterTemporary.innerHTML = `${Math.round(data.waterTemperature.meto || data.waterTemperature.noaa || data.waterTemperature.sg)}°`
   windDirection.style.transform = `rotate(${data.windDirection.icon || data.windDirection.noaa || data.windDirection.sg}deg)`
-  windSpeed.innerHTML = `${data.windSpeed.icon || data.windSpeed.noaa || data.windSpeed.sg} <span class="pp-stormglass-unit">m/s</span>`
-  waveHeight.innerHTML = `${data.waveHeight.icon || data.waveHeight.dwd} <span class="pp-stormglass-unit">m</span>`
-  wavePeriod.innerHTML = `${Math.round(data.wavePeriod.icon || data.wavePeriod.noaa)} <span class="pp-stormglass-unit">s</span>`
+  windSpeed.innerHTML = `${data.windSpeed.icon || data.windSpeed.noaa || data.windSpeed.sg}<span class="pp-stormglass-unit">m/s</span>`
+  waveHeight.innerHTML = `${data.waveHeight.icon || data.waveHeight.dwd}<span class="pp-stormglass-unit">m</span>`
+  wavePeriod.innerHTML = `${Math.round(data.wavePeriod.icon || data.wavePeriod.noaa)}<span class="pp-stormglass-unit">s</span>`
   wavedir.style.transform = `rotate(${data.waveDirection.icon || data.waveDirection.noaa || data.waveDirection.meteo}deg)`
   stormglassLoaderContainer.style.display = 'none'
   stormglassContainer.style.display = 'flex'
