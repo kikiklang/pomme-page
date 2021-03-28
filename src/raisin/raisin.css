@@ -32,14 +32,13 @@ raisin-links {
   text-decoration: none;
   border-top: 1px dashed var(--myrtille-background);
   outline: none;
+  transition: 200ms;
 }
 
 .raisin-link:first-child {
   border-top: none;
 }
 
-.raisin-link:hover::after {
-  position: absolute;
-  content: "❯";
+.raisin-link:hover {
   color: var(--pomme-background);
 }
