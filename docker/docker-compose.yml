@@ -1,6 +1,7 @@
 services:
   pomme-page:
     build: .
+    container_name: "pomme-page"
     ports:
       - "80:80"
     volumes:

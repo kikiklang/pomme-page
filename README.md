@@ -31,6 +31,7 @@
     - [Colors](#Colors)
   - [Deploying](#Deploying)
     - [Docker](#Docker)
+    - [Docker-Compose](#Docker-Compose)
   - [Contribution](#Contribution)
   - [More Start Pages](#More-start-pages)
   - [Licence](#Licence)
@@ -143,6 +144,15 @@ docker run -dp 80:80 -v <absolute path to your pomme-page repository>/src/:/usr/
 ```
 
 This way, pomme-page will be available from the IPs `192.168.178.[1-255]`
+
+### Docker-Compose
+If you'd rather use docker-compose instead of defining the necessary volumes, ports and variables from the CLI, there's a default docker-compose file as well. Just let it build the image and start a container afterwards.
+
+```sh
+cd docker
+docker-compose build
+docker-compose up -d
+```
 
 ## More Start Pages
 You can find more lovely start pages for your browser here -> https://github.com/jnmcfly/awesome-startpage
