@@ -133,9 +133,9 @@ cd docker
 docker build . -t pomme-page
 ```
 
-Go on by configuring pomme-page as you would by editing the files in the `src/` directory. Then, run the container, but make sure to map `src/` so your edited configuration gets deployed.
+Go on by configuring pomme-page as you would by editing the files in the `src/` directory. Don't forget to enter your API keys to `.env` or to remove unused modules. Then, run the container, but make sure to map `src/` and `.env` so your edited configuration gets deployed.
 ```sh
-docker run -dp 80:80 -v <absolute path to your pomme-page repository>/src/:/usr/share/pomme-page/src/ pomme-page
+docker run -dp 80:80 -v <absolute path to your pomme-page repository>/.env:/usr/share/pomme-page/.env -v <absolute path to your pomme-page repository>/src/:/usr/share/pomme-page/src/ pomme-page
 ```
 
 If you want to secure your API keys against unwanted access, you can set a valid IP(range) via the environment variable `$IPRANGE`.
