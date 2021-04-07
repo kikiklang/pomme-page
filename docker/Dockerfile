@@ -19,6 +19,8 @@ WORKDIR /usr/share/pomme-page/
 
 COPY startup.sh .
 
+COPY my-httpd.conf /usr/local/apache2/conf/httpd.conf
+
 RUN npm install
 
 EXPOSE 80

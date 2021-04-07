@@ -8,4 +8,4 @@ services:
       - ../src/:/usr/share/pomme-page/src/
       - ../.env:/usr/share/pomme-page/.env
     environment:
-      - IPRANGE=192.168.178.1/24
+      - IPRANGE=192.168.178.41
