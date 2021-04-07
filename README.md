@@ -30,6 +30,7 @@
     - [Modules](#Modules)
     - [Colors](#Colors)
   - [Deploying](#Deploying)
+    - [Docker](#Docker)
   - [Contribution](#Contribution)
   - [More Start Pages](#More-start-pages)
   - [Licence](#Licence)
@@ -123,6 +124,25 @@ Please feel free to contribute if you like this project and have some time to sp
 
 ## Deploying
 After the build process, you'll find a `dist` folder that parcel just created. We still have API Keys in the code. In my case, i deploy this behind a caddy reverse proxy and limit/filter access to these static files only from my personal computer IP. At the end, you will load around 45 Kilobytes of html/css/js (15 Kilobytes gzipped) in your browser, which is quite light for a startpage i suppose.
+
+### Docker
+If you don't want to set up a fully functional web server on your system, there's a docker container for that. First, build the image using the provided Dockerfile.
+```sh
+cd docker
+docker build . -t pomme-page
+```
+
+Go on by configuring pomme-page as you would by editing the files in the `src/` directory. Then, run the container, but make sure to map `src/` so your edited configuration gets deployed.
+```sh
+docker run -dp 80:80 -v <absolute path to your pomme-page repository>/src/:/usr/share/pomme-page/src/ pomme-page
+```
+
+If you want to secure your API keys against unwanted access, you can set a valid IP(range) via the environment variable `$IPRANGE`.
+```sh
+docker run -dp 80:80 -v <absolute path to your pomme-page repository>/src/:/usr/share/pomme-page/src/ -e "IPRANGE=192.168.178.1/24" pomme-page
+```
+
+This way, pomme-page will be available from the IPs `192.168.178.[1-255]`
 
 ## More Start Pages
 You can find more lovely start pages for your browser here -> https://github.com/jnmcfly/awesome-startpage

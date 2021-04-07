@@ -1,0 +1,9 @@
+services:
+  pomme-page:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ../src/:/usr/share/pomme-page/src/
+    environment:
+      - IPRANGE=192.168.178.1/24
