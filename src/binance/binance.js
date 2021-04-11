@@ -65,8 +65,8 @@ function completeFooterValues(data) {
   const differenceValue = document.querySelector('.binance-difference-value')
   const currentValue = document.querySelector('.binance-current-value')
   const pairSymbol = process.env.BINANCE_PAIR_SYMBOL
-  const lastPrice = +data.lastPrice
-  const priceChange = +data.priceChange
+  const lastPrice = Number(data.lastPrice)
+  const priceChange = Number(data.priceChange)
 
   console.log(data.priceChange)
   console.log(priceChange)
