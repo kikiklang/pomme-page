@@ -4,8 +4,10 @@ const stormglassLoaderContainer = document.querySelector('pp-stormglass-loader-c
 function handleStormGlassApiError(response) {
   const stormglassErrorContainer = document.querySelector('pp-stormglass-error-container')
   const stormglassErrorCode = document.querySelector('.stormglass-error-code')
+  const stormglassErrorMesage = document.querySelector('.stormglass-error-message')
 
   stormglassErrorCode.innerHTML = response.status
+  stormglassErrorMesage.innerHTML = response.statusText
   stormglassLoaderContainer.style.display = 'none'
   stormglassErrorContainer.style.display = 'flex'
 }
