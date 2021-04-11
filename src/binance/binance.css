@@ -73,7 +73,7 @@ pp-binance-current {
 .binance-current-value {
   color: var(--main);
   font-weight: var(--font-weight-bold);
-  font-size: var(--scale-3);
+  font-size: var(--scale-2);
 }
 
 .binance-money-unit {
