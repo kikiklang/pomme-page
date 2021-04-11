@@ -68,9 +68,6 @@ function completeFooterValues(data) {
   const lastPrice = Number(data.lastPrice)
   const priceChange = Number(data.priceChange)
 
-  console.log(data.priceChange)
-  console.log(priceChange)
-
   differenceValue.innerHTML = `${priceChange}<span class="binance-money-unit">${pairSymbol}</span>`
   currentValue.innerHTML = `${lastPrice}<span class="binance-money-unit">${pairSymbol}</span>`
 }
