@@ -46,7 +46,7 @@ pp-openweather-humid {
 .humid-value {
   color: var(--main);
   font-weight: var(--font-weight-bold);
-  font-size: var(--scale-1);
+  font-size: var(--scale-0);
 }
 
 pp-openweather-loader-container {

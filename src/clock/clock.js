@@ -1,6 +1,8 @@
 // //////// CLOCK //////// //
 
-function displayClock() {
+const clockContainer = document.querySelector('pp-clock-inner')
+
+function displayTime() {
   const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
   const date = new Date()
   const h = date.getHours()
@@ -12,9 +14,20 @@ function displayClock() {
   const minute = m < 10 ? `0${m}` : m
   const second = s < 10 ? `0${s}` : s
 
-  document.querySelector('.pp-time').innerHTML = `${day} : ${hour} : ${minute} : ${second}`
+  document.querySelector('.pp-clock-time').innerHTML = `${day} : ${hour} : ${minute} : ${second}`
 
-  setTimeout(displayClock, 1000)
+  setTimeout(displayTime, 1000)
 }
 
-export default displayClock
+function displayDate() {
+  const today = new Date(Date.now())
+  const options = {year: 'numeric', month: 'short', day: 'numeric'}
+
+  document.querySelector('.pp-clock-date').innerHTML = today.toLocaleDateString(process.env.CLOCK_LOCALE, options)
+}
+
+function toggleClockDisplay() {
+  clockContainer.classList.toggle('is-flipped')
+}
+
+export {clockContainer, toggleClockDisplay, displayTime, displayDate}

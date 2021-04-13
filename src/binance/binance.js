@@ -65,12 +65,11 @@ function completeFooterValues(data) {
   const differenceValue = document.querySelector('.binance-difference-value')
   const currentValue = document.querySelector('.binance-current-value')
   const pairSymbol = process.env.BINANCE_PAIR_SYMBOL
+  const lastPrice = Number(data.lastPrice)
+  const priceChange = Number(data.priceChange)
 
-  differenceValue.innerHTML =
-    data.priceChange > 0 ?
-      `${Math.round(data.priceChange)}<span class="binance-money-unit">${pairSymbol}</span>` :
-      `${Math.round(data.priceChange)}<span class="binance-money-unit">${pairSymbol}</span>`
-  currentValue.innerHTML = `${Math.round(data.lastPrice)}<span class="binance-money-unit">${pairSymbol}</span>`
+  differenceValue.innerHTML = `${priceChange}<span class="binance-money-unit">${pairSymbol}</span>`
+  currentValue.innerHTML = `${lastPrice}<span class="binance-money-unit">${pairSymbol}</span>`
 }
 
 function displayBinanceData(historicalData, currentData) {

@@ -89,3 +89,10 @@ p.stormglass-error-code {
   font-weight: var(--font-weight-bold);
   font-size: var(--scale-2);
 }
+
+p.stormglass-error-message {
+  margin-top: var(--spacing-0);
+  color: var(--search-background);
+  font-size: var(--scale-00);
+  font-style: italic;
+}
