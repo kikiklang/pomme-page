@@ -13,10 +13,6 @@
   animation: fadein-page 300ms ease-out normal backwards;
 }
 
-.myrtille-link:hover {
-  transform: rotate(5deg);
-}
-
 .myrtille-link svg {
   width: 50%;
   fill: var(--main);
