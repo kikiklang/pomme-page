@@ -45,7 +45,7 @@ pp-clock-back {
 }
 
 pp-clock-inner.is-flipped {
-  transform: rotateX(180deg);
+  transform: rotateX(-180deg);
 }
 
 .pp-clock-time,
