@@ -1,8 +1,9 @@
 // //////// RAISIN //////// //
+const raisinLinks = [...document.querySelectorAll('.raisin-link')]
+const searchInput = document.querySelector('.pp-search-input')
 
 function truncateLinkName() {
   const raisinContainerWidth = document.querySelector('raisin').offsetWidth
-  const raisinLinks = [...document.querySelectorAll('.raisin-link')]
   let maxLength = 0
 
   switch (true) {
@@ -28,5 +29,14 @@ function truncateLinkName() {
     }
   })
 }
+
+raisinLinks.forEach(link => {
+  link.addEventListener('mouseover', event => {
+    event.preventDefault()
+    if (searchInput) {
+      searchInput.placeholder = link.hostname
+    }
+  })
+})
 
 export default truncateLinkName
