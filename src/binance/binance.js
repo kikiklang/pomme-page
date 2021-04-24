@@ -85,7 +85,7 @@ function displayBinanceData(historicalData, currentData) {
 
 async function getBinancedata() {
   const url = 'https://api.binance.com'
-  const pair = process.env.BINANCE_PAIR
+  const pair = 'USDT'
   const klinesPath = '/api/v3/klines'
   const klinesParameters = `?symbol=${cryptoPicked}${pair}&interval=1d&limit=7`
   const tickerPath = '/api/v3/ticker/24hr'
