@@ -42,6 +42,7 @@ I made this project to test stuffs like parcelJs, pug and other cool things in m
 - **theming** Custom colors with css variables.
 - **Responsive** Unpredictive layout thanks to CSS grid :)
 - **Modular** each square is a module that you can move / remove / duplicate / customize
+- **Fast loading** no dependencies, no framework, no super heavy advanced features, it's light.
 
 ## Built with
 - [Parcel](https://parceljs.org/) Blazing fast, zero configuration web application bundler
