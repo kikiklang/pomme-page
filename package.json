@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "npm run clean && npx parcel src/index.pug --out-dir development -p 3000",
-    "build": "npm run clean && npx parcel build src/index.pug --no-cache",
+    "build": "npm run clean && npx parcel build src/index.pug --public-url ./ --no-cache",
     "serve": "npx serve dist",
     "clean": "rimraf ./development && rimraf -rf ./.cache && rimraf -rf ./dist",
     "prettier": "prettier --write 'src/**/*.pug'",
