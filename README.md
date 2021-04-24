@@ -39,7 +39,7 @@
 I made this project to test stuffs like parcelJs, pug and other cool things in my free time. You can check a demo [here](https://kikiklang.github.io/pomme-page/) to see how this page behaves and how it could look like in your browser with your screen resolution. The default configuration is probably not great for your needs, but however, with a little time, you can achieve a nice result.
 
 ## Features
-- **theming** Custom colors with css variables.
+- **Theming** Custom colors with css variables.
 - **Responsive** Unpredictive layout thanks to CSS grid :)
 - **Modular** each square is a module that you can move / remove / duplicate / customize
 - **Fast loading** no dependencies, no framework, no super heavy advanced features, it's light.
@@ -55,16 +55,13 @@ To get a local copy up and running, you will need:
 - [nodejs](https://nodejs.org/en/)- Node.js® is a JavaScript runtime that will help running javascript code   outside your browser
 
 ## Installation
-1. Once nodeJs is installed, install Parcel globally on your machine.
-    ```sh
-    npm install -g parcel-bundler
-    ```
-2. Paste this command in your terminal to clone the repository inside the folder of your choice 
+1. Once nodeJs is installed, paste this command in your terminal to clone the repository inside the folder of your choice 
     ```sh
     git clone git@github.com:kikiklang/pomme-page.git
     ```
 3. Still in your terminal, move into pomme-page freshly created folder and run this command to install all project dependencies
     ```sh
+    cd pomme-page
     npm install
     ```
 4. To finish the installation, you will have to provide a `.env` file where you can place your configuration variables like API keys. Put this file at the root of pomme-page folder (see example with the `.env.example` file).
