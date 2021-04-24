@@ -64,7 +64,7 @@ function generateChartLine(data) {
 function completeFooterValues(data) {
   const differenceValue = document.querySelector('.binance-difference-value')
   const currentValue = document.querySelector('.binance-current-value')
-  const pairSymbol = '$'
+  const pairSymbol = 't'
   const lastPrice = Number(data.lastPrice)
   const priceChange = Number(data.priceChange)
 
