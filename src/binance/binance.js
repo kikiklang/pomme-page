@@ -1,6 +1,6 @@
 // //////// CRYPTO //////// //
 
-let cryptoPicked = process.env.BINANCE_SYMBOLS.split(' ')[0].toUpperCase()
+let cryptoPicked = 'btc ada ltc dot'.split(' ')[0].toUpperCase()
 const cryptoButtonsContainer = document.querySelector('pp-binance-selector')
 const binanceLoaderContainer = document.querySelector('pp-binance-loader-container')
 
@@ -22,7 +22,7 @@ function handleBinanceApiError(historicalDataResponse, currentDataResponse) {
 }
 
 function generateButtons() {
-  const symbolsList = process.env.BINANCE_SYMBOLS.split(' ')
+  const symbolsList = 'btc ada ltc dot'.split(' ')
 
   symbolsList.forEach(symbol => {
     const newButton = document.createElement('button')

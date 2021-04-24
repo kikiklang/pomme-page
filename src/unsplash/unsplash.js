@@ -1,41 +1,19 @@
 // //////// UNSPLASH //////// //
 
-const unsplashLoaderContainer = document.querySelector('pp-unsplash-loader-container')
-
-function handleUnsplashApiError(response) {
-  const unsplashErrorContainer = document.querySelector('pp-unsplash-error-container')
-  const unsplashErrorCode = document.querySelector('.unsplash-error-code')
-
-  unsplashErrorCode.innerHTML = response.status
-  unsplashLoaderContainer.style.display = 'none'
-  unsplashErrorContainer.style.display = 'flex'
-}
-
 function displayUnsplashImage(data) {
   const image = document.querySelector('.unsplash-small')
   const unsplashLoader = document.querySelector('pp-unsplash-loader-container')
   const unsplashContainer = document.querySelector('pp-unsplash')
 
-  image.src = data.urls.small
+  image.src = data
   unsplashLoader.style.display = 'none'
   unsplashContainer.style.display = 'flex'
 }
 
 async function getUnsplashData() {
-  const apiKey = process.env.UNSPLASH_API_KEY
-  const orientation = 'landscape'
-  const collectionId = process.env.UNSPLASH_COLLECTION_ID
-  const url = 'https://api.unsplash.com/'
-  const path = 'photos/random/'
-  const parameters = `client_id=${apiKey}&orientation=${orientation}&collections=${collectionId}`
-  const response = await fetch(`${url}${path}?${parameters}`)
+  const response = 'https://images.unsplash.com/photo-1536408614573-c49fd217cd3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMDY1NzF8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MTkyNzE3NzY&ixlib=rb-1.2.1&q=80&w=400'
 
-  if (response.ok) {
-    const jsonResponse = await response.json()
-    return displayUnsplashImage(jsonResponse)
-  }
-
-  return handleUnsplashApiError(response)
+  return displayUnsplashImage(response)
 }
 
 export default getUnsplashData
