@@ -18,6 +18,7 @@
 
 ## Index
 - [Pomme Page](#)
+  - [About](#about)
   - [Features](#features)
   - [Built With](#Built-with)
   - [Getting Started](#Getting-started)
@@ -34,10 +35,13 @@
   - [More Start Pages](#More-start-pages)
   - [Licence](#Licence)
 
-## Features:
+## About
+I made this project to test stuffs like parcelJs, pug and other cool things in my free time. You can check a demo [here](https://kikiklang.github.io/pomme-page/) to see how this page behaves and how it could look like in your browser with your screen resolution. The default configuration is probably not great for your needs, but however, with a little time, you can achieve a nice result.
+
+## Features
 - **theming** Custom colors with css variables.
 - **Responsive** Unpredictive layout thanks to CSS grid :)
-- **Modular** each square is a module that you can move / remove / customize
+- **Modular** each square is a module that you can move / remove / duplicate / customize
 
 ## Built with
 - [Parcel](https://parceljs.org/) Blazing fast, zero configuration web application bundler
@@ -94,6 +98,7 @@ To get a local copy up and running, you will need:
 Pomme Page use modules to display informations: 
 - **myrtille** a big link with a nice icon of your favorite site
 - **raisin** a group of categorised links
+- **pomme** not really a module. Will be found in the `index.pug` file. its only function is to fill empty spaces.
 - **clock** time & date
 - **search** use duckduckgo or google search engines
 - **binance** past and current crypto currencies data
