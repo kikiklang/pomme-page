@@ -1,27 +1,64 @@
 // //////// WEATHER //////// //
 const openweatherInner = document.querySelector('pp-openweather-inner')
-const openWeatherLoaderContainer = document.querySelector('pp-openweather-loader-container')
+const loaderContainer = document.querySelector('pp-openweather-loader-container')
 
-function handleopenWeatherApiError(response) {
-  const openWeatherErrorContainer = document.querySelector('pp-openweather-error-container')
-  const openWeatherErrorCode = document.querySelector('.openweather-error-code')
-
-  openWeatherErrorCode.innerHTML = response.status
-  openWeatherLoaderContainer.style.display = 'none'
-  openWeatherErrorContainer.style.display = 'flex'
+/**
+ * Main module function that trigger data request, DOM elements collection and DOM elements filling
+ * And add an event listener on module
+ * @async
+ * @returns {void} Nothing
+ */
+export async function displayOpenWeatherModule() {
+  const [dom, data] = await Promise.all([catchOpenWeatherDomElements(), getOpenWeatherData()])
+  fillOpenWeatherDomElements(data, dom)
+  openweatherInner.addEventListener('click', toggleOpenWeatherDisplay)
 }
 
-function displayOpenWeatherData(data) {
-  const openWeatherLoader = document.querySelector('pp-openweather-loader-container')
-  const openWeatherContainer = document.querySelector('pp-openweather')
-  const temperature = document.querySelector('.temp-value')
-  const humid = document.querySelector('.humid-value')
-  const icons = [...document.querySelectorAll('.pp-openweather-icon')]
-  const cityName = document.querySelector('.city-value')
-  const sunrise = document.querySelector('.openweather-back-sunrise')
-  const sunset = document.querySelector('.openweather-back-sunset')
+/**
+ * GET data fron the openWeather API
+ * @async
+ * @returns {Promise} Promise object if resolved
+ */
+async function getOpenWeatherData() {
+  const url = 'https://api.openweathermap.org/data/2.5/weather'
+  const city = process.env.OPEN_WEATHER_CITY_QUERY_NAME
+  const units = process.env.OPEN_WEATHER_UNITS
+  const apiKey = process.env.OPEN_WEATHER_API_KEY
+  const response = await fetch(`${url}?q=${city}&units=${units}&APPID=${apiKey}`)
 
-  icons.forEach(icon => {
+  if (!response.ok) {
+    displayOpenWeatherErrorOnPage(response)
+    throw new Error(`An error has occured: ${response.status} => ${response.statusText}`)
+  }
+
+  return response.json()
+}
+
+/**
+ * GET DOM elements that will later be filled with data
+ * @async
+ * @returns {Promise} Promise object that resolved with DOM elements contained in an object
+ */
+async function catchOpenWeatherDomElements() {
+  return {
+    container: document.querySelector('pp-openweather'),
+    temperature: document.querySelector('.temp-value'),
+    humid: document.querySelector('.humid-value'),
+    icons: [...document.querySelectorAll('.pp-openweather-icon')],
+    cityName: document.querySelector('.city-value'),
+    sunrise: document.querySelector('.openweather-back-sunrise'),
+    sunset: document.querySelector('.openweather-back-sunset')
+  }
+}
+
+/**
+ * Fill targeted DOM elements with openweather API data
+ * @param {Object} data data from the openwaether API
+ * @param {Object} dom DOM elements
+ * @returns {void} Nothing
+ */
+function fillOpenWeatherDomElements(data, dom) {
+  dom.icons.forEach(icon => {
     if (icon.getAttribute('data-type').includes(data.weather[0].main.toLowerCase())) {
       icon.dataset.state = 'show'
     } else {
@@ -29,34 +66,34 @@ function displayOpenWeatherData(data) {
     }
   })
 
-  cityName.innerHTML = process.env.OPEN_WEATHER_CITY_DISPLAY_NAME || process.env.OPEN_WEATHER_CITY_QUERY_NAME
-  temperature.innerHTML = data.main.temp > 0 && data.main.temp < 10 ? `0${Math.round(data.main.temp)}°` : `${Math.round(data.main.temp)}°`
-  humid.innerHTML = `${data.main.humidity}%`
-  sunrise.innerHTML = formatTimestamp(data.sys.sunrise)
-  sunset.innerHTML = formatTimestamp(data.sys.sunset)
-  openWeatherLoader.style.display = 'none'
-  openWeatherContainer.style.display = 'flex'
+  dom.cityName.innerHTML = process.env.OPEN_WEATHER_CITY_DISPLAY_NAME || process.env.OPEN_WEATHER_CITY_QUERY_NAME
+  dom.temperature.innerHTML = data.main.temp > 0 && data.main.temp < 10 ? `0${Math.round(data.main.temp)}°` : `${Math.round(data.main.temp)}°`
+  dom.humid.innerHTML = `${data.main.humidity}%`
+  dom.sunrise.innerHTML = formatTimestamp(data.sys.sunrise)
+  dom.sunset.innerHTML = formatTimestamp(data.sys.sunset)
+  loaderContainer.style.display = 'none'
+  dom.container.style.display = 'flex'
 }
 
-async function getOpenWeatherData() {
-  const apiKey = process.env.OPEN_WEATHER_API_KEY
-  const url = 'https://api.openweathermap.org/data/2.5/weather'
-  const city = process.env.OPEN_WEATHER_CITY_QUERY_NAME
-  const units = process.env.OPEN_WEATHER_UNITS
-  const response = await fetch(`${url}?q=${city}&units=${units}&APPID=${apiKey}`)
+/**
+ * If openweather HTTP request fails, get error response and display info on the page
+ * @param {Object} response the error response from the API
+ * @returns {void} Nothing
+ */
+function displayOpenWeatherErrorOnPage(response) {
+  const errorContainer = document.querySelector('pp-openweather-error-container')
+  const errorCode = document.querySelector('.openweather-error-code')
 
-  if (response.ok) {
-    const jsonResponse = await response.json()
-    return displayOpenWeatherData(jsonResponse)
-  }
-
-  return handleopenWeatherApiError(response)
+  errorCode.innerHTML = response.status
+  loaderContainer.style.display = 'none'
+  errorContainer.style.display = 'flex'
 }
 
-function toggleWeatherDisplay() {
-  openweatherInner.classList.toggle('is-flipped')
-}
-
+/**
+ * Format timestamp to human readable hours and minutes
+ * @param {Number} stamp timestamp found in API response for sunrise and sunset
+ * @returns {string} time in hours and minutes
+ */
 function formatTimestamp(stamp) {
   const date = new Date(stamp * 1000)
   let h = date.getHours()
@@ -68,4 +105,10 @@ function formatTimestamp(stamp) {
   return `${h}:${m}`
 }
 
-export {openweatherInner, toggleWeatherDisplay, getOpenWeatherData}
+/**
+ * Add/remove class on dom element for flipping whole module
+ * @returns {void} Nothing
+ */
+function toggleOpenWeatherDisplay() {
+  openweatherInner.classList.toggle('is-flipped')
+}
