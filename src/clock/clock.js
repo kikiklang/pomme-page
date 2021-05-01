@@ -3,17 +3,17 @@
 const clockContainer = document.querySelector('pp-clock-inner')
 
 function displayTime() {
-  const date = new Date()
-  const d = date.toLocaleDateString(process.env.CLOCK_LOCALE, {weekday: 'short'}).toUpperCase()
-  const h = date.getHours()
-  const m = date.getMinutes()
-  const s = date.getSeconds()
+  const d = new Date()
+  const h = d.getHours()
+  const m = d.getMinutes()
+  const s = d.getSeconds()
 
+  const day = d.toLocaleDateString(process.env.CLOCK_LOCALE, {weekday: 'short'}).toUpperCase()
   const hour = h < 10 ? `0${h}` : h
   const minute = m < 10 ? `0${m}` : m
   const second = s < 10 ? `0${s}` : s
 
-  document.querySelector('.pp-clock-time').innerHTML = `${d} : ${hour} : ${minute} : ${second}`
+  document.querySelector('.pp-clock-time').innerHTML = `${day} : ${hour} : ${minute} : ${second}`
 
   setTimeout(displayTime, 1000)
 }
