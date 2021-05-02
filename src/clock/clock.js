@@ -2,6 +2,20 @@
 
 const clockContainer = document.querySelector('pp-clock-inner')
 
+/**
+ * Main exported function that sets time, date, and attaches event handler
+ * @returns {void} Nothing
+ */
+export function startClockModule() {
+  displayTime()
+  displayDate()
+  clockContainer.addEventListener('click', toggleClockDisplay)
+}
+
+/**
+ * Set and display formatted current time based on user locale
+ * @returns {void} Nothing
+ */
 function displayTime() {
   const d = new Date()
   const h = d.getHours()
@@ -18,6 +32,10 @@ function displayTime() {
   setTimeout(displayTime, 1000)
 }
 
+/**
+ * Set and display formatted current date based on user locale
+ * @returns {void} Nothing
+ */
 function displayDate() {
   const today = new Date()
   const options = {year: 'numeric', month: 'short', day: 'numeric'}
@@ -25,8 +43,10 @@ function displayDate() {
   document.querySelector('.pp-clock-date').innerHTML = today.toLocaleDateString(process.env.CLOCK_LOCALE, options)
 }
 
+/**
+ * Toggle container css class to flip the module
+ * @returns {void} Nothing
+ */
 function toggleClockDisplay() {
   clockContainer.classList.toggle('is-flipped')
 }
-
-export {clockContainer, toggleClockDisplay, displayTime, displayDate}

@@ -1,7 +1,7 @@
 // //////// INDEX //////// //
 
 import {truncateLinkName} from './raisin/raisin.js'
-import {clockContainer, toggleClockDisplay, displayTime, displayDate} from './clock/clock.js'
+import {startClockModule} from './clock/clock.js'
 import {startSearchModule} from './search/search.js'
 import {generateButtons, cryptoButtonsContainer, getBinancedata, toggleButtons} from './binance/binance.js'
 import {displayOpenWeatherModule} from './openweather/openweather.js'
@@ -12,9 +12,7 @@ import {displayStormglassModule} from './stormglass/stormglass.js'
 truncateLinkName()
 
 // Clock
-clockContainer.addEventListener('click', toggleClockDisplay)
-displayTime()
-displayDate()
+startClockModule()
 
 // Search
 startSearchModule()

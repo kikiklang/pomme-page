@@ -6,6 +6,7 @@ const searchInput = document.querySelector('.pp-search-input')
  * Truncate link name to avoid multiline text breaking
  * it catches the container width, set a maximum character count authorized based on the container width
  * and then slice the link name at the right length
+ * @returns {void} Nothing
  */
 function truncateLinkName() {
   const raisinContainerWidth = document.querySelector('raisin').offsetWidth
