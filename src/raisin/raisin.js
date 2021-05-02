@@ -2,6 +2,11 @@
 const raisinLinks = [...document.querySelectorAll('.raisin-link')]
 const searchInput = document.querySelector('.pp-search-input')
 
+/**
+ * Truncate link name to avoid multiline text breaking
+ * it catches the container width, set a maximum character count authorized based on the container width
+ * and then slice the link name at the right length
+ */
 function truncateLinkName() {
   const raisinContainerWidth = document.querySelector('raisin').offsetWidth
   let maxLength = 0
@@ -30,6 +35,9 @@ function truncateLinkName() {
   })
 }
 
+/**
+ * Add an mouse over event listener on each link to display domain name inside the search module if existing
+ */
 raisinLinks.forEach(link => {
   link.addEventListener('mouseover', event => {
     event.preventDefault()
