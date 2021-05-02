@@ -6,7 +6,7 @@ import {buttonsContainer, searchContainer, toggleEngineIcons, sendSearch} from '
 import {generateButtons, cryptoButtonsContainer, getBinancedata, toggleButtons} from './binance/binance.js'
 import {displayOpenWeatherModule} from './openweather/openweather.js'
 import {displayUnsplashModule} from './unsplash/unsplash.js'
-import getStormglassData from './stormglass/stormglass.js'
+import {displayStormglassModule} from './stormglass/stormglass.js'
 
 // Raisin
 truncateLinkName()
@@ -32,6 +32,4 @@ displayOpenWeatherModule()
 displayUnsplashModule()
 
 // Stormglass
-getStormglassData()
-
-// Weather
+displayStormglassModule()
