@@ -39,4 +39,4 @@ raisinLinks.forEach(link => {
   })
 })
 
-export default truncateLinkName
+export {truncateLinkName}
