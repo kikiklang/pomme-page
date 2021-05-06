@@ -61,8 +61,7 @@ To get a local copy up and running, you will need:
     ```
 3. Still in your terminal, move into pomme-page freshly created folder and run this command to install all project dependencies
     ```sh
-    cd pomme-page
-    npm install
+    cd pomme-page && npm ci
     ```
 4. To finish the installation, you will have to provide a `.env` file where you can place your configuration variables like API keys. Put this file at the root of pomme-page folder (see example with the `.env.example` file).
 
@@ -125,7 +124,7 @@ You can make your theme with the css variables found in `index.css`
 Please feel free to contribute if you like this project and have some time to spare.
 
 ## Deploying
-After the build process, you'll find a `dist` folder that parcel just created. We still have API Keys in the code. In my case, i deploy this behind a caddy reverse proxy and limit/filter access to these static files only from my personal computer IP. At the end, you will load around 45 Kilobytes of html/css/js (15 Kilobytes gzipped) in your browser, which is quite light for a startpage i suppose.
+After the build process, you'll find a `dist` folder that parcel just created. We still have API Keys in the code. In my case, i deploy this behind a caddy reverse proxy and limit/filter access to these static files only from my personal computer IP. At the end, you will load around 50 Kilobytes of html/css/js (~20 Kilobytes gzipped) in your browser.
 If you plan to deploy your build where it will not be served from your domains root (like github-pages). You must change your parcel build command in the `package.json` file to
   ```json
   "build": "npm run clean && npx parcel build src/index.pug --public-url ./ --no-cache"
