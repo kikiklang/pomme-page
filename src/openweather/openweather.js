@@ -3,15 +3,17 @@ const openweatherInner = document.querySelector('pp-openweather-inner')
 const loaderContainer = document.querySelector('pp-openweather-loader-container')
 
 /**
- * Main module function that trigger data request, DOM elements collection and DOM elements filling
- * And add an event listener on module
+ * Main exported module function that trigger data request, DOM elements collection, DOM elements filling
+ * add an event listener on module and display it
  * @async
  * @returns {void} Nothing
  */
-export async function displayOpenWeatherModule() {
+export async function startOpenWeatherModule() {
   const [dom, data] = await Promise.all([catchOpenWeatherDomElements(), getOpenWeatherData()])
   fillOpenWeatherDomElements(data, dom)
   openweatherInner.addEventListener('click', toggleOpenWeatherDisplay)
+  loaderContainer.style.display = 'none'
+  dom.container.style.display = 'flex'
 }
 
 /**
@@ -71,8 +73,6 @@ function fillOpenWeatherDomElements(data, dom) {
   dom.humid.innerHTML = `${data.main.humidity}%`
   dom.sunrise.innerHTML = formatTimestamp(data.sys.sunrise)
   dom.sunset.innerHTML = formatTimestamp(data.sys.sunset)
-  loaderContainer.style.display = 'none'
-  dom.container.style.display = 'flex'
 }
 
 /**

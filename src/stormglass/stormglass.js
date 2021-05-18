@@ -2,19 +2,23 @@
 const stormglassLoaderContainer = document.querySelector('pp-stormglass-loader-container')
 
 /**
- * Main module function that triggers data request, DOM elements collection and DOM elements filling
+ * Main exported module function that triggers data request, DOM elements collection, DOM elements filling
+ * and display the module
  * @async
  * @returns {void} Nothing
  */
-export async function displayStormglassModule() {
+export async function startStormglassModule() {
   const [dom, data] = await Promise.all([catchStormglassDomElements(), getStormglassData()])
+
   fillStormglassDomElements(dom, data)
+  stormglassLoaderContainer.style.display = 'none'
+  dom.stormglassContainer.style.display = 'flex'
 }
 
 /**
  * GET data fron the stormglass API
  * @async
- * @returns {Promise} Promise object if resolved
+ * @returns {Promise} Promise object
  */
 async function getStormglassData() {
   const currentISODate = new Date().toISOString().slice(0, 13)
@@ -67,8 +71,6 @@ async function fillStormglassDomElements(dom, data) {
   dom.waveHeight.innerHTML = `${data.waveHeight.icon || data.waveHeight.dwd}<span class="pp-stormglass-unit">m</span>`
   dom.wavePeriod.innerHTML = `${Math.round(data.wavePeriod.icon || data.wavePeriod.noaa)}<span class="pp-stormglass-unit">s</span>`
   dom.wavedir.style.transform = `rotate(${data.waveDirection.icon || data.waveDirection.noaa || data.waveDirection.meteo}deg)`
-  stormglassLoaderContainer.style.display = 'none'
-  dom.stormglassContainer.style.display = 'flex'
 }
 
 /**

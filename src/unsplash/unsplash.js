@@ -7,7 +7,7 @@ const unsplashLoaderContainer = document.querySelector('pp-unsplash-loader-conta
  * @async
  * @returns {void} Nothing
  */
-export async function displayUnsplashModule() {
+export async function startUnsplashModule() {
   const data = await getUnsplashData()
   const image = document.querySelector('.unsplash-small')
   const unsplashContainer = document.querySelector('pp-unsplash')
@@ -20,7 +20,7 @@ export async function displayUnsplashModule() {
 /**
  * GET data fron the unsplash API
  * @async
- * @returns {Promise} Promise object if resolved
+ * @returns {Promise} Promise object
  */
 async function getUnsplashData() {
   const apiKey = process.env.UNSPLASH_API_KEY
