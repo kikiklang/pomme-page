@@ -19,7 +19,7 @@ export async function startOpenWeatherModule() {
 /**
  * GET data fron the openWeather API
  * @async
- * @returns {Promise} Promise object if resolved
+ * @returns {Promise} Promise object
  */
 async function getOpenWeatherData() {
   const url = 'https://api.openweathermap.org/data/2.5/weather'
