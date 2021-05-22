@@ -1,0 +1,11 @@
+services:
+  pomme-page:
+    build: .
+    container_name: "pomme-page"
+    ports:
+      - "80:80"
+    volumes:
+      - ../src/:/usr/share/pomme-page/src/
+      - ../.env:/usr/share/pomme-page/.env
+    environment:
+      - IPRANGE=192.168.178.41
