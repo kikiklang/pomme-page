@@ -102,6 +102,7 @@ Pomme Page use modules to display informations:
 - **openweather** current weather (needs API key: [openweather](https://openweathermap.org/unsplash)) 
 - **unsplash** random image display (needs API key: [unsplash](https://unsplash.com/developers))
 - **stormglass** sea condition (needs API key: [stormglass](https://stormglass.io/)) [free up to 50 requests per day]
+- **news api** latest top headlines (needs API key: [newsapi](https://newsapi.org/)) [free up to 100 requests per day]
 
 ## Customization
 
