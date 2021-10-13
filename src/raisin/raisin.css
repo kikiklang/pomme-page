@@ -26,10 +26,13 @@ raisin-links {
 
 .raisin-link {
   padding: var(--spacing-0000) 0;
+  overflow: hidden;
   color: inherit;
   color: var(--myrtille-background);
   font-size: var(--scale-00);
+  white-space: nowrap;
   text-decoration: none;
+  text-overflow: ellipsis;
   border-top: 1px dashed var(--myrtille-background);
   outline: none;
   transition: 200ms;
