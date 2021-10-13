@@ -15,12 +15,12 @@ function getHostnameOnHover() {
   const myrtilleLinks = [...document.querySelectorAll('.myrtille-link')]
   const searchInput = document.querySelector('.pp-search-input')
 
-  myrtilleLinks.forEach(link => {
+  for (const link of myrtilleLinks) {
     link.addEventListener('mouseenter', event => {
       event.preventDefault()
       if (searchInput) {
         searchInput.placeholder = link.hostname
       }
     })
-  })
+  }
 }

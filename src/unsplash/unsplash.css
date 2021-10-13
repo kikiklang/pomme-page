@@ -2,8 +2,8 @@
 
 pp-unsplash {
   display: none;
-  grid-column: span 2;
   grid-row: span 4;
+  grid-column: span 2;
   background-color: var(--myrtille-background);
   border-radius: 10px;
   animation: module-display 500ms ease-in-out;
@@ -19,10 +19,10 @@ pp-unsplash > img {
 
 pp-unsplash-loader-container {
   display: flex;
-  grid-column: span 2;
   grid-row: span 4;
-  justify-content: center;
+  grid-column: span 2;
   align-items: center;
+  justify-content: center;
   background-color: var(--main);
   border: 2px solid var(--pomme-background);
   border-radius: 10px;
@@ -31,10 +31,10 @@ pp-unsplash-loader-container {
 pp-unsplash-error-container {
   display: none;
   flex-direction: column;
-  grid-column: span 2;
   grid-row: span 4;
-  justify-content: center;
+  grid-column: span 2;
   align-items: center;
+  justify-content: center;
   background-color: var(--main);
   border: 2px solid var(--search-background);
   border-radius: 10px;

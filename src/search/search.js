@@ -20,9 +20,9 @@ export function startSearchModule() {
  * @returns {void} Nothing
  */
 function toggleEngineIcons(event) {
-  iconList.forEach(icon => {
+  for (const icon of iconList) {
     icon.dataset.state = 'inactive'
-  })
+  }
 
   event.target.dataset.state = 'active'
 }

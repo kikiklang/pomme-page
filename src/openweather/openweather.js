@@ -60,13 +60,9 @@ async function catchOpenWeatherDomElements() {
  * @returns {void} Nothing
  */
 function fillOpenWeatherDomElements(data, dom) {
-  dom.icons.forEach(icon => {
-    if (icon.getAttribute('data-type').includes(data.weather[0].main.toLowerCase())) {
-      icon.dataset.state = 'show'
-    } else {
-      icon.dataset.state = 'hide'
-    }
-  })
+  for (const icon of dom.icons) {
+    icon.dataset.state = icon.getAttribute('data-type').includes(data.weather[0].main.toLowerCase()) ? 'show' : 'hide'
+  }
 
   dom.cityName.innerHTML = process.env.OPEN_WEATHER_CITY_DISPLAY_NAME || process.env.OPEN_WEATHER_CITY_QUERY_NAME
   dom.temperature.innerHTML = data.main.temp > 0 && data.main.temp < 10 ? `0${Math.round(data.main.temp)}°` : `${Math.round(data.main.temp)}°`

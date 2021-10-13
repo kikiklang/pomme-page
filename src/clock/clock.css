@@ -2,8 +2,8 @@
 
 pp-clock {
   display: flex;
-  grid-column: span 2;
   grid-row: span 2;
+  grid-column: span 2;
   background-color: transparent;
   perspective: 400px;
 }
@@ -26,8 +26,8 @@ pp-clock-front,
 pp-clock-back {
   position: absolute;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;

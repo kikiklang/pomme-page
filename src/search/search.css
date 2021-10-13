@@ -2,10 +2,10 @@
 
 pp-search {
   display: flex;
-  grid-column: span 3;
   grid-row: span 2;
-  justify-content: space-between;
+  grid-column: span 3;
   align-items: center;
+  justify-content: space-between;
   padding: 0 var(--spacing-0);
   background-color: var(--search-background);
   border-radius: 10px;
@@ -15,8 +15,8 @@ pp-search {
 
 pp-engine-buttons {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   width: 80px;
 }
 

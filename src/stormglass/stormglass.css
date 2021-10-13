@@ -3,8 +3,8 @@
 pp-stormglass {
   display: none;
   flex-direction: column;
-  grid-column: span 2;
   grid-row: span 4;
+  grid-column: span 2;
   padding: 0 var(--spacing-2);
   background-color: var(--module-background);
   border-radius: 10px;
@@ -13,8 +13,8 @@ pp-stormglass {
 
 pp-stormglass > * {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   height: var(--spacing-4);
 }
 
@@ -61,10 +61,10 @@ pp-linebreak {
 
 pp-stormglass-loader-container {
   display: flex;
-  grid-column: span 2;
   grid-row: span 4;
-  justify-content: center;
+  grid-column: span 2;
   align-items: center;
+  justify-content: center;
   background-color: var(--main);
   border: 2px solid var(--pomme-background);
   border-radius: 10px;
@@ -73,10 +73,10 @@ pp-stormglass-loader-container {
 pp-stormglass-error-container {
   display: none;
   flex-direction: column;
-  grid-column: span 2;
   grid-row: span 4;
-  justify-content: center;
+  grid-column: span 2;
   align-items: center;
+  justify-content: center;
   background-color: var(--main);
   border: 2px solid var(--search-background);
   border-radius: 10px;
