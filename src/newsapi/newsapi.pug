@@ -1,0 +1,54 @@
+// //////// NEWSAPI //////// //
+
+pp-newsapi
+  pp-newsapi-nav
+    svg.pp-newsapi-nav-left(
+      xmlns='http://www.w3.org/2000/svg',
+      width='32',
+      height='32',
+      viewbox='0 0 24 24',
+      fill='none',
+      stroke='var(--main)',
+      stroke-width='2',
+      stroke-linecap='round',
+      stroke-linejoin='round'
+    )
+      circle(cx='12', cy='12', r='10')
+      polyline(points='12 8 8 12 12 16')
+      line(x1='16', y1='12', x2='8', y2='12')
+
+    svg.pp-newsapi-nav-right(
+      xmlns='http://www.w3.org/2000/svg',
+      width='32',
+      height='32',
+      viewbox='0 0 24 24',
+      fill='none',
+      stroke='var(--main)',
+      stroke-width='2',
+      stroke-linecap='round',
+      stroke-linejoin='round'
+    )
+      circle(cx='12', cy='12', r='10')
+      polyline(points='12 16 16 12 12 8')
+      line(x1='8', y1='12', x2='16', y2='12')
+
+  pp-newsapi-divider
+
+  a.pp-newsapi-title(href='', target='_blank', rel='noopener noreferrer')
+
+  pp-newsapi-divider
+
+  a.pp-newsapi-source(href='', target='_blank', rel='noopener noreferrer')
+
+pp-newsapi-loader-container
+  pp-loader-alt
+    pp-loader-dot
+    pp-loader-dot
+    pp-loader-dot
+    pp-loader-dot
+
+pp-newsapi-error-container
+  .pp-newsapi-error-box
+    p.error-notification API error
+    p.newsapi-error-code
+    p.newsapi-error-message

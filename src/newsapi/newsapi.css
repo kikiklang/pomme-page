@@ -1,0 +1,106 @@
+/************** NEWSAPI **************/
+
+pp-newsapi {
+  display: none;
+  grid-column: span 6;
+  grid-row: span 2;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 var(--spacing-0);
+  background-color: var(--module-background);
+  border-radius: 10px;
+  animation: module-display 500ms ease-in-out;
+}
+
+pp-newsapi-nav {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: var(--spacing-2);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pp-newsapi-nav-left {
+  margin-right: var(--spacing-000);
+  cursor: pointer;
+}
+
+.pp-newsapi-nav-right {
+  margin-right: var(--spacing-0);
+  cursor: pointer;
+}
+
+pp-newsapi-divider {
+  height: var(--spacing-4);
+  border-left: 1px solid var(--main);
+}
+
+.pp-newsapi-title {
+  flex: 1;
+  margin: 0 var(--spacing-0);
+  overflow: hidden;
+  color: var(--main);
+  font-size: var(--scale-1);
+  white-space: nowrap;
+  text-decoration: none;
+  text-overflow: ellipsis;
+}
+
+.pp-newsapi-source {
+  flex-shrink: 0;
+  margin-left: var(--spacing-00);
+  color: var(--main);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--scale-1);
+  font-style: italic;
+  text-decoration: none;
+}
+
+.pp-newsapi-title:hover,
+.pp-newsapi-source:hover {
+  text-decoration: underline;
+}
+
+pp-newsapi-loader-container {
+  display: flex;
+  grid-column: span 6;
+  grid-row: span 2;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main);
+  border: 2px solid var(--pomme-background);
+  border-radius: 10px;
+}
+
+pp-newsapi-error-container {
+  display: none;
+  grid-column: span 6;
+  grid-row: span 2;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main);
+  border: 2px solid var(--search-background);
+  border-radius: 10px;
+  animation: module-display 500ms ease-in-out;
+}
+
+.pp-newsapi-error-box {
+  display: flex;
+  align-items: baseline;
+}
+
+p.newsapi-error-code {
+  margin-left: var(--spacing-00);
+  color: var(--search-background);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--scale-2);
+}
+
+p.newsapi-error-message {
+  margin-left: var(--spacing-00);
+  color: var(--search-background);
+  font-size: var(--scale-00);
+  font-style: italic;
+  text-transform: uppercase;
+}

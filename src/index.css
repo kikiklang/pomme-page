@@ -26,6 +26,13 @@ textarea {
   box-sizing: border-box;
 }
 
+/************** FONTS **************/
+
+@font-face {
+  font-family: ubuntu-regular;
+  src: local('ubuntu'), url('../assets/fonts/Ubuntu-Regular.woff') format('woff');
+}
+
 /************** VARIABLES **************/
 
 :root {
@@ -38,7 +45,11 @@ textarea {
   --myrtille-background: hsl(235, 17%, 63%);
 
   /* font-family */
-  --font-family-sans: system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, ubuntu, 'Helvetica Neue', sans-serif;
+  --font-family-sans: ubuntu, 'Helvetica Neue', system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, sans-serif;
+
+  /* font weights */
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
 
   /* font Modular scale */
   --scale-000: 0.75rem; /* 12px */
@@ -49,10 +60,6 @@ textarea {
   --scale-3: 1.5rem; /* 24px */
   --scale-4: 1.875rem; /* 30px */
   --scale-5: 2.25rem; /* 36px */
-
-  /* font weights */
-  --font-weight-regular: 400;
-  --font-weight-bold: 700;
 
   /* sizing property -> margin, padding, height */
   --spacing-0000: 4px;
@@ -108,6 +115,12 @@ pp-loader {
     'pp-loader-dot pp-loader-dot';
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+}
+
+pp-loader-alt {
+  display: flex;
+  justify-content: space-between;
+  width: 120px;
 }
 
 pp-loader-dot {
@@ -167,3 +180,4 @@ pp-loader-dot:nth-child(4) {
 @import './openweather/openweather.css';
 @import './unsplash/unsplash.css';
 @import './stormglass/stormglass.css';
+@import './newsapi/newsapi.css';
