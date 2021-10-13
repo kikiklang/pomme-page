@@ -155,10 +155,12 @@ async function toggleButtons(event) {
   buttonsList.forEach(button => {
     button.dataset.state = 'inactive'
   })
+
   event.target.dataset.state = 'active'
   cryptoPicked = event.target.innerHTML.toUpperCase()
 
   const [klineData, tickerData] = await Promise.all([getBinanceKlinesData(), getBinanceTickerData()])
+
   generateChartLine(klineData)
   completeFooterValues(tickerData)
 }
