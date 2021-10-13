@@ -81,10 +81,10 @@ async function fillStormglassDomElements(dom, data) {
 function displayStormglassErrorOnPage(response) {
   const stormglassErrorContainer = document.querySelector('pp-stormglass-error-container')
   const stormglassErrorCode = document.querySelector('.stormglass-error-code')
-  const stormglassErrorMesage = document.querySelector('.stormglass-error-message')
+  const stormglassErrorMessage = document.querySelector('.stormglass-error-message')
 
   stormglassErrorCode.innerHTML = response.status
-  stormglassErrorMesage.innerHTML = response.statusText
+  stormglassErrorMessage.innerHTML = response.statusText
   stormglassLoaderContainer.style.display = 'none'
   stormglassErrorContainer.style.display = 'flex'
 }
