@@ -37,9 +37,10 @@ function sendSearch(event) {
   const input = document.querySelector('.pp-search-input')
 
   if (event.key === 'Enter') {
-    const activeEngine = [...iconList].find(b => [...b.attributes][3].value === 'active')
-    const activeEngineDomain = [...activeEngine.attributes][5].value
+    const activeEngine = [...iconList].find(b => b.dataset.state === 'active')
+    const activeEngineDomain = activeEngine.dataset.address
     const url = `${activeEngineDomain}?q=${input.value}`
+
     window.open(url)
     input.value = ''
   }
