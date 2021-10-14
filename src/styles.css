@@ -8,7 +8,7 @@
 @import './openweather/openweather.css';
 @import './unsplash/unsplash.css';
 @import './stormglass/stormglass.css';
-@import './newsapi/newsapi.css';
+/* @import './newsapi/newsapi.css'; -- need a pricing plan to use it from domain origin :( */
 
 /******* RESET *******/
 
