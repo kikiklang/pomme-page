@@ -33,7 +33,7 @@
 mixin raisin(title, data)
   raisin
     raisin-header 
-      p.raisin-title #{title}
+      p.raisin-title #{ title }
     raisin-links
       each val, key in data
-        a.raisin-link(href="https://" + val, target='_blank', rel='noopener noreferrer') #{key}
+        a.raisin-link(href="https://" + val, target='_blank', rel='noopener noreferrer') #{ key }

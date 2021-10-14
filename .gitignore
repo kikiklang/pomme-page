@@ -8,7 +8,7 @@ node_modules/
 
 # parcel
 dist
-.cache
+.parcel-cache
 development/
 
 # REST client vscode extension

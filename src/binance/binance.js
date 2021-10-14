@@ -70,13 +70,13 @@ async function getBinanceTickerData() {
 function generateButtons() {
   const symbolsList = process.env.BINANCE_SYMBOLS.split(' ')
 
-  symbolsList.forEach(symbol => {
+  for (const symbol of symbolsList) {
     const newButton = document.createElement('button')
     cryptoButtonsContainer.append(newButton)
     newButton.className = 'binance-selector-button'
     newButton.dataset.state = 'inactive'
     newButton.innerHTML = symbol
-  })
+  }
 
   cryptoButtonsContainer.firstChild.dataset.state = 'active'
 }
@@ -152,9 +152,9 @@ function displayBinanceErrorOnPage(response) {
 async function toggleButtons(event) {
   const buttonsList = document.querySelectorAll('.binance-selector-button')
 
-  buttonsList.forEach(button => {
+  for (const button of buttonsList) {
     button.dataset.state = 'inactive'
-  })
+  }
 
   event.target.dataset.state = 'active'
   cryptoPicked = event.target.innerHTML.toUpperCase()

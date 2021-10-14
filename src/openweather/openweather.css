@@ -2,8 +2,8 @@
 
 pp-openweather {
   display: none;
-  grid-column: span 1;
   grid-row: span 4;
+  grid-column: span 1;
   perspective: 400px;
   animation: module-display 500ms ease-in-out;
 }
@@ -31,8 +31,8 @@ pp-openweather-back {
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   padding: var(--spacing-0000) var(--spacing-0);
@@ -46,8 +46,8 @@ pp-openweather-front {
 pp-openweather-icons {
   display: flex;
   flex: 1;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 pp-openweather-icons .pp-openweather-icon[data-state='hide'] {
@@ -58,8 +58,8 @@ pp-openweather-city,
 pp-openweather-temp,
 pp-openweather-humid {
   display: flex;
-  justify-content: space-between;
   align-items: baseline;
+  justify-content: space-between;
   width: 100%;
   height: var(--spacing-2);
 }
@@ -110,10 +110,10 @@ pp-openweather-linebreak {
 
 pp-openweather-loader-container {
   display: flex;
-  grid-column: span 1;
   grid-row: span 4;
-  justify-content: center;
+  grid-column: span 1;
   align-items: center;
+  justify-content: center;
   background-color: var(--main);
   border: 2px solid var(--pomme-background);
   border-radius: 10px;
@@ -122,10 +122,10 @@ pp-openweather-loader-container {
 pp-openweather-error-container {
   display: none;
   flex-direction: column;
-  grid-column: span 1;
   grid-row: span 4;
-  justify-content: center;
+  grid-column: span 1;
   align-items: center;
+  justify-content: center;
   background-color: var(--main);
   border: 2px solid var(--search-background);
   border-radius: 10px;

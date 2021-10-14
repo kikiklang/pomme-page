@@ -53,7 +53,7 @@ async function catchStormglassDomElements() {
     windSpeed: document.querySelector('.windspeed-value'),
     waveHeight: document.querySelector('.waveheight-value'),
     wavePeriod: document.querySelector('.waveperiod-value'),
-    wavedir: document.querySelector('.wavedir-icon')
+    wavedir: document.querySelector('.wavedir-icon'),
   }
 }
 

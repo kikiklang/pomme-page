@@ -1,3 +1,15 @@
+/******* IMPORTS *******/
+
+@import './myrtille/myrtille.css';
+@import './raisin/raisin.css';
+@import './clock/clock.css';
+@import './search/search.css';
+@import './binance/binance.css';
+@import './openweather/openweather.css';
+@import './unsplash/unsplash.css';
+@import './stormglass/stormglass.css';
+@import './newsapi/newsapi.css';
+
 /******* RESET *******/
 
 html,
@@ -94,8 +106,8 @@ body {
 
 grid {
   display: grid;
-  grid-auto-flow: dense;
   grid-auto-rows: var(--spacing-2);
+  grid-auto-flow: dense;
   grid-gap: var(--gap-1);
   grid-template-columns: repeat(auto-fit, minmax(var(--width-00), 1fr));
 }
@@ -113,8 +125,8 @@ pp-loader {
   grid-template-areas:
     'pp-loader-dot pp-loader-dot'
     'pp-loader-dot pp-loader-dot';
-  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 
 pp-loader-alt {
@@ -169,15 +181,3 @@ pp-loader-dot:nth-child(4) {
   70% { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
-
-/******* IMPORTS *******/
-
-@import './myrtille/myrtille.css';
-@import './raisin/raisin.css';
-@import './clock/clock.css';
-@import './search/search.css';
-@import './binance/binance.css';
-@import './openweather/openweather.css';
-@import './unsplash/unsplash.css';
-@import './stormglass/stormglass.css';
-@import './newsapi/newsapi.css';

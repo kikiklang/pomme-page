@@ -1,43 +1,46 @@
 {
   "name": "pomme-page",
-  "version": "0.3.0",
+  "version": "0.1.0",
   "description": "Big buttons with easy click startpage for a browser",
-  "main": "src/index.pug",
   "author": "kikiklang",
   "license": "MIT",
+  "source": "src/index.pug",
   "scripts": {
-    "dev": "npm run clean && npx parcel src/index.pug --out-dir development -p 3000",
-    "build": "npm run clean && npx parcel build src/index.pug --no-cache",
+    "start": "parcel --open",
+    "build": "npm run clean && parcel build --no-cache",
     "serve": "npx serve dist",
-    "clean": "rimraf ./development && rimraf -rf ./.cache && rimraf -rf ./dist",
+    "clean": "rimraf -rf ./.parcel-cache && rimraf -rf ./dist",
     "prettier": "prettier --write 'src/**/*.pug'",
     "stylelint": "stylelint --fix './**/*.css'",
     "xo": "xo  --env=browser --fix",
     "format": "npm run clean && npm run prettier && npm run stylelint && npm run xo"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9",
-    "@babel/preset-env": "^7.12.7",
-    "@prettier/plugin-pug": "^1.13.3",
-    "autoprefixer": "^9.8.6",
-    "husky": "^4.3.0",
-    "parcel-bundler": "^1.12.4",
-    "prettier": "^2.2.1",
-    "pug": "^3.0.0",
+    "@parcel/transformer-pug": "^2.0.0",
+    "@prettier/plugin-pug": "^1.16.7",
+    "autoprefixer": "^10.3.7",
+    "husky": "^7.0.2",
+    "parcel": "^2.0.0",
+    "prettier": "^2.4.1",
     "rimraf": "^3.0.2",
-    "stylelint": "^13.7.2",
+    "stylelint": "^13.13.1",
     "stylelint-color-format": "^1.1.0",
-    "stylelint-config-rational-order": "^0.0.4",
-    "stylelint-config-standard": "^20.0.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^22.0.0",
     "stylelint-group-selectors": "^1.0.8",
-    "xo": "^0.37.1"
+    "xo": "^0.45.0"
   },
-  "browserslist": [
-    "since 2017-06"
-  ],
   "prettier": {
     "printWidth": 130,
-    "singleQuote": true
+    "singleQuote": true,
+    "bracketSpacing": true
+  },
+  "xo": {
+    "semicolon": false,
+    "space": true,
+    "rules": {
+      "node/prefer-global/process": 0
+    }
   },
   "postcss": {
     "plugins": {
@@ -61,15 +64,6 @@
       "color-format/format": {
         "format": "hsl"
       }
-    }
-  },
-  "xo": {
-    "semicolon": false,
-    "space": true
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run format"
     }
   }
 }

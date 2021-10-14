@@ -3,8 +3,8 @@
 pp-binance {
   display: none;
   flex-direction: column;
-  grid-column: span 2;
   grid-row: span 6;
+  grid-column: span 2;
   padding: 0 var(--spacing-2);
   background-color: var(--module-background);
   border-radius: 10px;
@@ -13,8 +13,8 @@ pp-binance {
 
 pp-binance-selector {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   height: var(--spacing-4);
 }
 
@@ -52,8 +52,8 @@ pp-binance-chart-label {
 
 pp-binance-footer {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   height: var(--spacing-5);
 }
 
@@ -85,10 +85,10 @@ pp-binance-current {
 
 pp-binance-loader-container {
   display: flex;
-  grid-column: span 2;
   grid-row: span 6;
-  justify-content: center;
+  grid-column: span 2;
   align-items: center;
+  justify-content: center;
   background-color: var(--main);
   border: 2px solid var(--pomme-background);
   border-radius: 10px;
@@ -97,10 +97,10 @@ pp-binance-loader-container {
 pp-binance-error-container {
   display: none;
   flex-direction: column;
-  grid-column: span 2;
   grid-row: span 6;
-  justify-content: center;
+  grid-column: span 2;
   align-items: center;
+  justify-content: center;
   background-color: var(--main);
   border: 2px solid var(--search-background);
   border-radius: 10px;
