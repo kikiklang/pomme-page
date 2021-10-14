@@ -49,7 +49,7 @@ async function catchOpenWeatherDomElements() {
     icons: [...document.querySelectorAll('.pp-openweather-icon')],
     cityName: document.querySelector('.city-value'),
     sunrise: document.querySelector('.openweather-back-sunrise'),
-    sunset: document.querySelector('.openweather-back-sunset')
+    sunset: document.querySelector('.openweather-back-sunset'),
   }
 }
 
