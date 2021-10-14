@@ -104,7 +104,7 @@ Pomme Page use modules to display informations:
 - **openweather** current weather (needs API key: [openweather](https://openweathermap.org/unsplash)) 
 - **unsplash** random image display (needs API key: [unsplash](https://unsplash.com/developers))
 - **stormglass** sea condition (needs API key: [stormglass](https://stormglass.io/)) [free up to 50 requests per day]
-- **news api** latest top headlines (needs API key: [newsapi](https://newsapi.org/)) [free up to 100 requests per day]
+- **news api** latest top headlines (needs API key: [newsapi](https://newsapi.org/) + pricing plan) [100 requests per day on localhost only, need to pay for deploying on server :(...I got screwed, i thought it was free, so the module is here, in the code but it's inactive]
 
 ## Customization
 
@@ -130,10 +130,11 @@ You can make your theme with the css variables found in `index.css`
 Please feel free to contribute if you like this project and have some time to spare.
 
 ## Deploying
+If you want the source maps in the bundle, you can remove `--no-source-maps"` in the build script found in `package.json`.
 After the build process, you'll find a `dist` folder that parcel just created. We still have API Keys in the code. In my case, i deploy this behind a caddy reverse proxy and limit/filter access to these static files only from my personal computer IP. At the end, you will load around 50 Kilobytes of html/css/js (~20 Kilobytes gzipped) in your browser.
 If you plan to deploy your build where it will not be served from your domains root (like github-pages). You must change your parcel build command in the `package.json` file to
   ```json
-  "build": "npm run clean && parcel build --public-url ./ --no-cache"
+  "build": "npm run clean && parcel build --public-url ./ --no-source-maps"
   ```
 Now your build will be served from the index.html files location thanks to the `--public-url ./` option.
 
