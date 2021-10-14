@@ -19,7 +19,7 @@
     "@parcel/transformer-pug": "^2.0.0",
     "@prettier/plugin-pug": "^1.16.7",
     "autoprefixer": "^10.3.7",
-    "husky": "^7.0.2",
+    "husky": "^4.3.8",
     "parcel": "^2.0.0",
     "prettier": "^2.4.1",
     "rimraf": "^3.0.2",
@@ -64,6 +64,11 @@
       "color-format/format": {
         "format": "hsl"
       }
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format"
     }
   }
 }
