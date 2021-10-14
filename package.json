@@ -7,7 +7,7 @@
   "source": "src/index.pug",
   "scripts": {
     "start": "parcel --open",
-    "build": "npm run clean && parcel build --no-cache",
+    "build": "npm run clean && parcel build --no-source-maps",
     "serve": "npx serve dist",
     "clean": "rimraf -rf ./.parcel-cache && rimraf -rf ./dist",
     "prettier": "prettier --write 'src/**/*.pug'",
