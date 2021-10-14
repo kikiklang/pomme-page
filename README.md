@@ -31,6 +31,8 @@
     - [Modules](#Modules)
     - [Colors](#Colors)
   - [Deploying](#Deploying)
+    - [Docker](#Docker)
+    - [Docker-Compose](#Docker-Compose)
   - [Contribution](#Contribution)
   - [More Start Pages](#More-start-pages)
   - [Licence](#Licence)
@@ -134,6 +136,34 @@ If you plan to deploy your build where it will not be served from your domains r
   "build": "npm run clean && parcel build --public-url ./ --no-cache"
   ```
 Now your build will be served from the index.html files location thanks to the `--public-url ./` option.
+
+### Docker
+If you don't want to set up a fully functional web server on your system, there's a docker container for that. First, build the image using the provided Dockerfile.
+```sh
+cd docker
+docker build . -t pomme-page
+```
+
+Go on by configuring pomme-page as you would by editing the files in the `src/` directory. Don't forget to enter your API keys to `.env` or to remove unused modules. Then, run the container, but make sure to map `src/` and `.env` so your edited configuration gets deployed.
+```sh
+docker run -dp 80:80 -v <absolute path to your pomme-page repository>/.env:/usr/share/pomme-page/.env -v <absolute path to your pomme-page repository>/src/:/usr/share/pomme-page/src/ pomme-page
+```
+
+If you want to secure your API keys against unwanted access, you can set a valid IP(range) via the environment variable `$IPRANGE`.
+```sh
+docker run -dp 80:80 -v <absolute path to your pomme-page repository>/src/:/usr/share/pomme-page/src/ -e "IPRANGE=192.168.178.1/24" pomme-page
+```
+
+This way, pomme-page will be available from the IPs `192.168.178.[1-255]`
+
+### Docker-Compose
+If you'd rather use docker-compose instead of defining the necessary volumes, ports and variables from the CLI, there's a default docker-compose file as well. Just let it build the image and start a container afterwards.
+
+```sh
+cd docker
+docker-compose build
+docker-compose up -d
+```
 
 ## More Start Pages
 You can find more lovely start pages for your browser here -> https://github.com/jnmcfly/awesome-startpage
