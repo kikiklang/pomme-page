@@ -36,7 +36,7 @@
   - [Licence](#Licence)
 
 ## About
-I made this project to test stuffs like parcelJs, pug and other cool things in my free time. You can check a demo [here](https://kikiklang.github.io/pomme-page/) to see how this page behaves and how it could look like in your browser with your screen resolution. The default configuration is probably not great for your needs, but however, with a little time, you can achieve a nice result.
+I made this project to test stuffs like parcelJs, pug and other cool things in my free time. You can check a demo [here](https://kikiklang.github.io/pomme-page/) to see how this page behaves and how it could look like in your browser with your screen resolution. The default configuration is probably not great for your needs, but however, with some time, you can achieve a nice result.
 
 ## Features
 - **Theming** Custom colors with css variables.
@@ -63,7 +63,7 @@ To get a local copy up and running, you will need:
     ```sh
     cd pomme-page && npm ci
     ```
-4. To finish the installation, you will have to provide a `.env` file where you can place your configuration variables like API keys. Put this file at the root of pomme-page folder (see example with the `.env.example` file).
+4. To finish the installation, you must provide a `.env` file where you can place your configuration variables like API keys. Put this file at the root of pomme-page folder (see example with the `.env.example` file).
 
 ## Usage
  You can now open the project in your IDE and run this project locally
@@ -107,7 +107,10 @@ Pomme Page use modules to display informations:
 ## Customization
 
 ### Modules Layout and display
-Layout is made with CSS grid, you can simply move modules around in `src/index.pug` file. To remove a module, you have to delete the corresponding folder in src and then remove all imports found in the 3 index files (pug, css, js).
+Layout is made with CSS grid, you can simply move modules around in `src/index.pug` file. To remove a module, you have to delete the corresponding folder in `src` and then remove all related imports found in the 3 main files at the root of `src` folder :
+- index.pug
+- styles.css
+- app.js
 
 ### Myrtille
 Links images work in svg format. To add a link, go to `src/index.pug` and make a myrtille. It's a pug function that takes 3 parameters:
@@ -128,7 +131,7 @@ Please feel free to contribute if you like this project and have some time to sp
 After the build process, you'll find a `dist` folder that parcel just created. We still have API Keys in the code. In my case, i deploy this behind a caddy reverse proxy and limit/filter access to these static files only from my personal computer IP. At the end, you will load around 50 Kilobytes of html/css/js (~20 Kilobytes gzipped) in your browser.
 If you plan to deploy your build where it will not be served from your domains root (like github-pages). You must change your parcel build command in the `package.json` file to
   ```json
-  "build": "npm run clean && npx parcel build src/index.pug --public-url ./ --no-cache"
+  "build": "npm run clean && parcel build --public-url ./ --no-cache"
   ```
 Now your build will be served from the index.html files location thanks to the `--public-url ./` option.
 
