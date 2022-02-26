@@ -13,22 +13,23 @@
     "prettier": "prettier --write 'src/**/*.pug'",
     "stylelint": "stylelint --fix './**/*.css'",
     "xo": "xo  --env=browser --fix",
-    "format": "npm run clean && npm run prettier && npm run stylelint && npm run xo"
+    "format": "npm run clean && npm run prettier && npm run stylelint && npm run xo",
+    "prepare": "husky install"
   },
   "devDependencies": {
-    "@parcel/transformer-pug": "^2.0.0",
-    "@prettier/plugin-pug": "^1.16.7",
-    "autoprefixer": "^10.3.7",
-    "husky": "^4.3.8",
-    "parcel": "^2.0.0",
-    "prettier": "^2.4.1",
+    "@parcel/transformer-pug": "^2.3.2",
+    "@prettier/plugin-pug": "^1.19.2",
+    "autoprefixer": "^10.4.2",
+    "husky": "^7.0.4",
+    "parcel": "^2.3.2",
+    "prettier": "^2.5.1",
     "rimraf": "^3.0.2",
     "stylelint": "^13.13.1",
     "stylelint-color-format": "^1.1.0",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-group-selectors": "^1.0.8",
-    "xo": "^0.45.0"
+    "xo": "^0.48.0"
   },
   "prettier": {
     "printWidth": 130,

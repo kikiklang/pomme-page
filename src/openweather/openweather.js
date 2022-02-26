@@ -61,7 +61,7 @@ async function catchOpenWeatherDomElements() {
  */
 function fillOpenWeatherDomElements(data, dom) {
   for (const icon of dom.icons) {
-    icon.dataset.state = icon.getAttribute('data-type').includes(data.weather[0].main.toLowerCase()) ? 'show' : 'hide'
+    icon.dataset.state = icon.dataset.type.includes(data.weather[0].main.toLowerCase()) ? 'show' : 'hide'
   }
 
   dom.cityName.innerHTML = process.env.OPEN_WEATHER_CITY_DISPLAY_NAME || process.env.OPEN_WEATHER_CITY_QUERY_NAME
