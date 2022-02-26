@@ -8,7 +8,8 @@ const stormglassLoaderContainer = document.querySelector('pp-stormglass-loader-c
  * @returns {void} Nothing
  */
 export async function startStormglassModule() {
-  const [dom, data] = await Promise.all([catchStormglassDomElements(), getStormglassData()])
+  const dom = catchStormglassDomElements()
+  const data = await getStormglassData()
 
   fillStormglassDomElements(dom, data)
   stormglassLoaderContainer.style.display = 'none'
@@ -41,10 +42,9 @@ async function getStormglassData() {
 
 /**
  * Get DOM elements that will later be filled with data
- * @async
- * @returns {Promise} Promise object that resolved with DOM elements contained in an object
+ * @returns {Object} DOM elements contained in an object
  */
-async function catchStormglassDomElements() {
+function catchStormglassDomElements() {
   return {
     stormglassContainer: document.querySelector('pp-stormglass'),
     spotName: document.querySelector('.header-spot'),

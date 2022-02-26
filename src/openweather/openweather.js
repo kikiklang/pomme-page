@@ -9,7 +9,9 @@ const loaderContainer = document.querySelector('pp-openweather-loader-container'
  * @returns {void} Nothing
  */
 export async function startOpenWeatherModule() {
-  const [dom, data] = await Promise.all([catchOpenWeatherDomElements(), getOpenWeatherData()])
+  const dom = catchOpenWeatherDomElements()
+  const data = await getOpenWeatherData()
+
   fillOpenWeatherDomElements(data, dom)
   openweatherInner.addEventListener('click', toggleOpenWeatherDisplay)
   loaderContainer.style.display = 'none'
@@ -38,10 +40,9 @@ async function getOpenWeatherData() {
 
 /**
  * GET DOM elements that will later be filled with data
- * @async
- * @returns {Promise} Promise object that resolved with DOM elements contained in an object
+ * @returns {Object} DOM elements contained in an object
  */
-async function catchOpenWeatherDomElements() {
+function catchOpenWeatherDomElements() {
   return {
     container: document.querySelector('pp-openweather'),
     temperature: document.querySelector('.temp-value'),
